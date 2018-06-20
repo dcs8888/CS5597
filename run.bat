@@ -1,0 +1,1 @@
+python cycle_elevation_routing.py > log.txt 2>&1
