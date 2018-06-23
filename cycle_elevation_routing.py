@@ -1,10 +1,5 @@
 import requests
 import math
-from PIL import Image
-from io import BytesIO
-
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
 
 """
 From
@@ -19,17 +14,17 @@ def deg2num(lat_deg, lon_deg, zoom):
 
 def main():
 
-    z = 5
+    z = 15
     x, y = deg2num(38.878103, -94.859009, z)
-    r = requests.get('https://tile.thunderforest.com/cycle/' + str(z) + '/' + str(x) + '/' + str(y) + '.png?apikey=e25c01ab4aa14652b5bd3472c5e1f859')
+    
+    r = requests.get('https://tile.thunderforest.com/thunderforest.outdoors-v1.json?apikey=e25c01ab4aa14652b5bd3472c5e1f859')
 
+    print(r.headers['Content-Type'])
+    print(r.status_code)
+    
     if r.status_code == requests.codes.ok:
         
-        i = Image.open(BytesIO(r.content))
-        imgplot = plt.imshow(i)
-        plt.show()
-
-
+        print(r.json())
 
 if __name__ == "__main__":
    main()
