@@ -19,7 +19,7 @@ def deg2num(lat_deg, lon_deg, zoom):
 
 def main():
 
-    z = 10
+    z = 15
     lat = 38.878103
     lon = -94.859009
     x, y = deg2num(lat, lon, z)
@@ -42,8 +42,8 @@ def main():
             print(json_data['center'])
             print(json.dumps(json_data, sort_keys=True, indent=4, separators=(',', ': ')))
 
-    #r_img = requests.get('https://tile.thunderforest.com/cycle/' + str(z) + '/' + str(x) + '/' + str(y) + '.jpg90?apikey=e25c01ab4aa14652b5bd3472c5e1f859')
-    r_img = requests.url('http://www.opencyclemap.org/?zoom=13&lat=38.97044&lon=-94.77044&layers=B0000')
+    r_img = requests.get('https://tile.thunderforest.com/cycle/' + str(z) + '/' + str(x) + '/' + str(y) + '.jpg90?apikey=e25c01ab4aa14652b5bd3472c5e1f859')
+
     print(r_img.headers['Content-Type'])
     print(r_img.status_code)
 

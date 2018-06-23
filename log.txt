@@ -560,7 +560,7 @@ application/json; charset=utf-8
     ]
 }
 [0, 0, 0]
-[10, 38.878103, -94.859009]
+[15, 38.878103, -94.859009]
 {
     "attribution": "",
     "bounds": [
@@ -570,7 +570,7 @@ application/json; charset=utf-8
         85.0511
     ],
     "center": [
-        10,
+        15,
         38.878103,
         -94.859009
     ],
@@ -1120,9 +1120,5 @@ application/json; charset=utf-8
         }
     ]
 }
-Traceback (most recent call last):
-  File "cycle_elevation_routing.py", line 56, in <module>
-    main()
-  File "cycle_elevation_routing.py", line 46, in main
-    r_img = requests.url('http://www.opencyclemap.org/?zoom=13&lat=38.97044&lon=-94.77044&layers=B0000')
-AttributeError: module 'requests' has no attribute 'url'
+image/jpeg
+200
