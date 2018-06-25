@@ -1,3 +1,4 @@
+Request Vector Outdoors
 application/json; charset=utf-8
 200
 {
@@ -1120,5 +1121,9 @@ application/json; charset=utf-8
         }
     ]
 }
+Request CYCLE IMG
 image/jpeg
+200
+Request OSM
+text/xml; charset=utf-8
 200
