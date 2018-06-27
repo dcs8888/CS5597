@@ -33,7 +33,7 @@ def main():
     current_user = users_pandas_data.loc[users_pandas_data['UserID'] == current_user_id]
 
 
-    final = pandas.merge(current_user, routes_pandas_data, on=['CycleType', 'CyclistLevel'])
+    final = pandas.merge(current_user, routes_pandas_data, on=['CycleType', 'CyclistLevel', 'PreferBikeLanes'])
 
     final.to_json('out.json')
 
