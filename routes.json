@@ -1,0 +1,34 @@
+[
+	{
+		"RouteID": "1",
+		"ElevationAvg": 100,
+		"ElevationMax": 120,
+		"ElevationMin": 12,
+		"CycleType": "road",
+		"CyclistLevel": "Casual",
+		"TimeAvailable": 162,
+		"BikeLane": "True",
+		"BikeTrial": "False",
+		"StartLocation": "-64.84806, -149.77982",
+		"EndLocation": "-73.55076, 113.95448",
+		"ReturnRoute": "False",
+		"ReducedTraffic": "True",
+		"RouteLocationPreference": "City"
+    },
+    {
+		"RouteID": "2",
+		"ElevationAvg": 300,
+		"ElevationMax": 560,
+		"ElevationMin": 111,
+		"CycleType": "road",
+		"CyclistLevel": "Professional",
+		"TimeAvailable": 306,
+		"BikeLane": "False",
+		"BikeTrial": "False",
+		"StartLocation": "-64.84806, -149.77982",
+		"EndLocation": "-73.55076, 113.95448",
+		"ReturnRoute": "False",
+		"ReducedTraffic": "False",
+		"RouteLocationPreference": "City"
+    }
+]
