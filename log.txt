@@ -1,1129 +1,1500 @@
-Request Vector Outdoors
-application/json; charset=utf-8
-200
-{
-    "attribution": "",
-    "bounds": [
-        -180,
-        -85.0511,
-        180,
-        85.0511
-    ],
-    "center": [
-        0,
-        0,
-        0
-    ],
-    "description": "",
-    "format": "pbf",
-    "id": "thunderforest.outdoors-v1",
-    "maskLevel": 8,
-    "maxzoom": 14,
-    "minzoom": 0,
-    "name": "Thunderforest Outdoors Vector tiles",
-    "scheme": "xyz",
-    "tilejson": "2.0.0",
-    "tiles": [
-        "https://a.tile.thunderforest.com/thunderforest.outdoors-v1/{z}/{x}/{y}.vector.pbf?apikey=e25c01ab4aa14652b5bd3472c5e1f859",
-        "https://b.tile.thunderforest.com/thunderforest.outdoors-v1/{z}/{x}/{y}.vector.pbf?apikey=e25c01ab4aa14652b5bd3472c5e1f859",
-        "https://c.tile.thunderforest.com/thunderforest.outdoors-v1/{z}/{x}/{y}.vector.pbf?apikey=e25c01ab4aa14652b5bd3472c5e1f859"
-    ],
-    "vector_layers": [
-        {
-            "description": "Elevation polygons. 0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1250, 1500, 1750, 2000, 2500, 3000m above sea level",
-            "fields": {
-                "height": "Number. Height above sea level in metres"
-            },
-            "id": "elevation",
-            "maxzoom": 22,
-            "minzoom": 7
-        },
-        {
-            "description": "Lowzoom landcover",
-            "fields": {},
-            "id": "landcover-lowzoom",
-            "maxzoom": 8,
-            "minzoom": 0
-        },
-        {
-            "description": "Landuse polygons, such as residential, industrial, park, garden, school",
-            "fields": {
-                "type": "String. The type of landuse"
-            },
-            "id": "landuse",
-            "maxzoom": 22,
-            "minzoom": 9
-        },
-        {
-            "description": "Landcover polygons, such as forest, wood, orchard, beach, farmland",
-            "fields": {
-                "leaf_cycle": "String. One of evergreen, deciduous, semi_evergreen, semi_deciduous, mixed, null and various others (appropriate to forest and wood landcover types)",
-                "leaf_type": "String. One of broadleaved, needleleaved, mixed, leafless, null and various others (appropriate to forest and wood landcover types)",
-                "type": "String. The type of landcover",
-                "wood": "String. Values are mixed, coniferous, deciduous, null and various others (appropriate to forest and wood landcover types)"
-            },
-            "id": "landcover",
-            "maxzoom": 22,
-            "minzoom": 9
-        },
-        {
-            "description": "Glaciers",
-            "fields": {},
-            "id": "glacier",
-            "maxzoom": 22,
-            "minzoom": 10
-        },
-        {
-            "description": "Wetland areas",
-            "fields": {
-                "name": "String. Name of the wetland",
-                "type": "String. One of marsh, swamp, bog, fen and tidalflat",
-                "way_area": "Number. Area of wetland in Mercator square metres"
-            },
-            "id": "wetland",
-            "maxzoom": 22,
-            "minzoom": 10
-        },
-        {
-            "description": "Hillshading polygons",
-            "fields": {
-                "level": "Number. The amount of hillshading, in steps of 5, from 150 (sun facing) to 180 (level) to 200 (shaded)",
-                "prio": "Do not use"
-            },
-            "id": "hillshade",
-            "maxzoom": 22,
-            "minzoom": 7
-        },
-        {
-            "description": "10 metre contours",
-            "fields": {
-                "height": "Number. Height in metres above sea level",
-                "priority": "String. One of major, medium, minor"
-            },
-            "id": "contour",
-            "maxzoom": 22,
-            "minzoom": 11
-        },
-        {
-            "description": "Water polygons",
-            "fields": {
-                "landuse": "String. One of reservoir, water, basin or null",
-                "natural": "String. One of lake, water or null",
-                "waterway": "String. One of dock, mill_pond, riverbank, canal or null"
-            },
-            "id": "water",
-            "maxzoom": 22,
-            "minzoom": 6
-        },
-        {
-            "description": "Linear water features - rivers, streams, canals etc",
-            "fields": {
-                "waterway": "String. One of river, stream, canal, ditch or drain"
-            },
-            "id": "waterway",
-            "maxzoom": 22,
-            "minzoom": 10
-        },
-        {
-            "description": "Selected water features",
-            "fields": {
-                "name": "String. The name of the feature",
-                "type": "One of dam, weir, lock_gate, pier, breakwater or groyne"
-            },
-            "id": "water-feature",
-            "maxzoom": 22,
-            "minzoom": 13
-        },
-        {
-            "description": "Ski pistes mapped as lines",
-            "fields": {
-                "piste:difficulty": "String. The difficulty rating of the piste, on of novice, easy, intermediate, advanced, expert, freeride, extreme or null"
-            },
-            "id": "piste-line",
-            "maxzoom": 22,
-            "minzoom": 13
-        },
-        {
-            "description": "Ski pistes mapped as areas",
-            "fields": {
-                "piste:difficulty": "String. The difficulty rating of the piste, on of novice, easy, intermediate, advanced, expert, freeride, extreme or null"
-            },
-            "id": "piste-area",
-            "maxzoom": 22,
-            "minzoom": 13
-        },
-        {
-            "description": "Ocean Polygons",
-            "fields": {},
-            "id": "ocean-lowzoom",
-            "maxzoom": 5,
-            "minzoom": 0
-        },
-        {
-            "description": "Ocean Polygons",
-            "fields": {},
-            "id": "ocean",
-            "maxzoom": 22,
-            "minzoom": 6
-        },
-        {
-            "description": "Ferry routes",
-            "fields": {
-                "name": "The name of the route",
-                "operator": "The operator of the route",
-                "ref": "The reference of the route"
-            },
-            "id": "ferries",
-            "maxzoom": 22,
-            "minzoom": 11
-        },
-        {
-            "description": "",
-            "fields": {
-                "aeroway": "String. One of runway, taxiway or apron"
-            },
-            "id": "aeroway-area",
-            "maxzoom": 22,
-            "minzoom": 11
-        },
-        {
-            "description": "",
-            "fields": {
-                "aeroway": "String. One of runway or taxiway"
-            },
-            "id": "aeroway",
-            "maxzoom": 22,
-            "minzoom": 11
-        },
-        {
-            "description": "Roads and paths mapped as areas",
-            "fields": {
-                "bicycle": "String. Bicycle permissions",
-                "foot": "String. Walker permissions",
-                "highway": "String. The highway classification, one of 'residential', 'unclassified', 'pedestrian', 'service', 'footway', 'living_street', 'track', 'path', 'cycleway', 'steps', 'via_ferrata', 'services'",
-                "horse": "String. Horse riding permissions",
-                "mtb": "String. Mountain biking permissions"
-            },
-            "id": "road-area",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "Golfing features",
-            "fields": {
-                "golf": "The type of golfing feature",
-                "name": "The name of the feature",
-                "par": "The par of the hole",
-                "ref": "The reference of the feature"
-            },
-            "id": "golf",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "Sports pitches. Uses the openstreetmap-fr scheme",
-            "fields": {},
-            "id": "sport-pitch",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "",
-            "fields": {
-                "aeroway": "String. This is 'terminal' for airport terminals",
-                "building": "String. The type of building"
-            },
-            "id": "building",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "",
-            "fields": {
-                "feature": "One of fence, wall, hedge or cliff"
-            },
-            "id": "barrier",
-            "maxzoom": 22,
-            "minzoom": 13
-        },
-        {
-            "description": "Railway sidings and yards",
-            "fields": {
-                "bridge": "String",
-                "railway": "String. The type of railway",
-                "tunnel": "String"
-            },
-            "id": "railway-siding",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "Railways, monorails, subways etc.",
-            "fields": {
-                "bridge": "String",
-                "railway": "String. The type of railway",
-                "tunnel": "String"
-            },
-            "id": "railway",
-            "maxzoom": 22,
-            "minzoom": 7
-        },
-        {
-            "description": "Paths",
-            "fields": {
-                "bicycle": "String",
-                "foot": "String",
-                "highway": "String. The type of path, on of 'path', 'footway', 'cycleway', 'bridleway', 'pedestrian', 'steps', 'via_ferrata'",
-                "horse": "String",
-                "mtb": "String",
-                "mtb:scale": "String",
-                "mtb:scale:imba": "String",
-                "mtb:scale:uphill": "String",
-                "sac_scale": "String",
-                "surface": "String",
-                "trail_visibility": "String"
-            },
-            "id": "path",
-            "maxzoom": 22,
-            "minzoom": 12
-        },
-        {
-            "description": "Lowzoom roads",
-            "fields": {
-                "bridge": "String",
-                "highway": "String. The type of highway, from motorway through tertiary including links",
-                "tunnel": "String"
-            },
-            "id": "road-lowzoom",
-            "maxzoom": 12,
-            "minzoom": 6
-        },
-        {
-            "description": "Roads",
-            "fields": {
-                "bridge": "String",
-                "cycleway": "String",
-                "cycleway_left": "String",
-                "cycleway_right": "String",
-                "highway": "String. The type of highway, from motorway through to track",
-                "layer": "Number. Relative layer compared to nearby features",
-                "tunnel": "String",
-                "z_order": "Number. The order in which the roads should be drawn"
-            },
-            "id": "road",
-            "maxzoom": 22,
-            "minzoom": 13
-        },
-        {
-            "description": "Snowmobile routes",
-            "fields": {
-                "ice_road": "String",
-                "snowmobile": "String. One of 'yes', 'designated', 'permissive'",
-                "toll": "String"
-            },
-            "id": "snowmobile",
-            "maxzoom": 22,
-            "minzoom": 12
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "hiking",
-            "maxzoom": 22,
-            "minzoom": 11
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "cycling-lowzoom",
-            "maxzoom": 12,
-            "minzoom": 5
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "cycling",
-            "maxzoom": 22,
-            "minzoom": 13
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "mountain-biking",
-            "maxzoom": 22,
-            "minzoom": 10
-        },
-        {
-            "description": "",
-            "fields": {
-                "aerialway": "The type of aerialway. One of chair_lift, cable_car, drag_lift, gondola, t-bar, j-bar."
-            },
-            "id": "aerialway",
-            "maxzoom": 22,
-            "minzoom": 13
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "power",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "Country Borders from Natural Earth",
-            "fields": {
-                "FID_ne_10m": "Number",
-                "adm0_a3_l": "String",
-                "adm0_a3_r": "String",
-                "adm0_left": "String",
-                "adm0_right": "String",
-                "adm0_usa": "Number",
-                "comment": "String",
-                "featurecla": "String",
-                "labelrank": "Number",
-                "name": "String",
-                "note_": "String",
-                "scalerank": "Number",
-                "sov_a3_l": "String",
-                "sov_a3_r": "String",
-                "type": "String"
-            },
-            "id": "country-line",
-            "maxzoom": 9,
-            "minzoom": 3
-        },
-        {
-            "description": "State borders from Natural Earth",
-            "fields": {
-                "adm0_a3": "String",
-                "adm0_name": "String",
-                "featurecla": "String",
-                "mapcolor13": "Number",
-                "mapcolor9": "Number",
-                "name": "String",
-                "name_alt_l": "String",
-                "name_alt_r": "String",
-                "name_l": "String",
-                "name_len_l": "Number",
-                "name_len_r": "Number",
-                "name_loc_l": "String",
-                "name_loc_r": "String",
-                "name_r": "String",
-                "note": "String",
-                "scalerank": "Number",
-                "shape_leng": "Number",
-                "sov_a3": "String"
-            },
-            "id": "state-line",
-            "maxzoom": 9,
-            "minzoom": 4
-        },
-        {
-            "description": "Country centroids, for label placement",
-            "fields": {
-                "labelrank": "Number",
-                "name": "String",
-                "scalerank": "Number"
-            },
-            "id": "country-label",
-            "maxzoom": 7,
-            "minzoom": 4
-        },
-        {
-            "description": "State centroids, for label placement",
-            "fields": {
-                "name": "String",
-                "postal": "String",
-                "sr_adm0_a3": "String"
-            },
-            "id": "state-label",
-            "maxzoom": 8,
-            "minzoom": 4
-        },
-        {
-            "description": "Cities",
-            "fields": {
-                "name": "String. The local name, followed by the English name if different. Contains a * to be used as a newline character",
-                "name_en": "String. The English name, or the local name if not present",
-                "name_local": "String. The local name",
-                "population": "Number"
-            },
-            "id": "city-label",
-            "maxzoom": 10,
-            "minzoom": 5
-        },
-        {
-            "description": "Place labels",
-            "fields": {
-                "name": "String. The local name, followed by the English name if different. Contains a * to be used as a newline character",
-                "name_en": "String. The English name, or the local name if not present",
-                "name_local": "String. The local name",
-                "place": "String",
-                "place_priority": "Number"
-            },
-            "id": "place-label",
-            "maxzoom": 22,
-            "minzoom": 9
-        },
-        {
-            "description": "Railway stations",
-            "fields": {
-                "railway": "String"
-            },
-            "id": "railway-station",
-            "maxzoom": 22,
-            "minzoom": 11
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "poi-label",
-            "maxzoom": 22,
-            "minzoom": 13
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "golf-label",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "glacier-label",
-            "maxzoom": 22,
-            "minzoom": 13
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "cycling-node-network-label",
-            "maxzoom": 22,
-            "minzoom": 11
-        },
-        {
-            "description": "",
-            "fields": {
-                "name": "String. Name of the hiking route",
-                "ref": "String. Reference of the hiking route",
-                "ref_length": "Number. Length of the route reference - useful for shields",
-                "symbol_code": "The osmc symbol code for the route"
-            },
-            "id": "hiking-label",
-            "maxzoom": 22,
-            "minzoom": 12
-        },
-        {
-            "description": "",
-            "fields": {
-                "name": "The name of the path"
-            },
-            "id": "path-label",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "road-label",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "water-label",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "landuse-label",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "landcover-label",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "waterway-label",
-            "maxzoom": 22,
-            "minzoom": 13
-        }
-    ]
-}
-[0, 0, 0]
-[15, 38.878103, -94.859009]
-{
-    "attribution": "",
-    "bounds": [
-        -180,
-        -85.0511,
-        180,
-        85.0511
-    ],
-    "center": [
-        15,
-        38.878103,
-        -94.859009
-    ],
-    "description": "",
-    "format": "pbf",
-    "id": "thunderforest.outdoors-v1",
-    "maskLevel": 8,
-    "maxzoom": 14,
-    "minzoom": 0,
-    "name": "Thunderforest Outdoors Vector tiles",
-    "scheme": "xyz",
-    "tilejson": "2.0.0",
-    "tiles": [
-        "https://a.tile.thunderforest.com/thunderforest.outdoors-v1/{z}/{x}/{y}.vector.pbf?apikey=e25c01ab4aa14652b5bd3472c5e1f859",
-        "https://b.tile.thunderforest.com/thunderforest.outdoors-v1/{z}/{x}/{y}.vector.pbf?apikey=e25c01ab4aa14652b5bd3472c5e1f859",
-        "https://c.tile.thunderforest.com/thunderforest.outdoors-v1/{z}/{x}/{y}.vector.pbf?apikey=e25c01ab4aa14652b5bd3472c5e1f859"
-    ],
-    "vector_layers": [
-        {
-            "description": "Elevation polygons. 0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1250, 1500, 1750, 2000, 2500, 3000m above sea level",
-            "fields": {
-                "height": "Number. Height above sea level in metres"
-            },
-            "id": "elevation",
-            "maxzoom": 22,
-            "minzoom": 7
-        },
-        {
-            "description": "Lowzoom landcover",
-            "fields": {},
-            "id": "landcover-lowzoom",
-            "maxzoom": 8,
-            "minzoom": 0
-        },
-        {
-            "description": "Landuse polygons, such as residential, industrial, park, garden, school",
-            "fields": {
-                "type": "String. The type of landuse"
-            },
-            "id": "landuse",
-            "maxzoom": 22,
-            "minzoom": 9
-        },
-        {
-            "description": "Landcover polygons, such as forest, wood, orchard, beach, farmland",
-            "fields": {
-                "leaf_cycle": "String. One of evergreen, deciduous, semi_evergreen, semi_deciduous, mixed, null and various others (appropriate to forest and wood landcover types)",
-                "leaf_type": "String. One of broadleaved, needleleaved, mixed, leafless, null and various others (appropriate to forest and wood landcover types)",
-                "type": "String. The type of landcover",
-                "wood": "String. Values are mixed, coniferous, deciduous, null and various others (appropriate to forest and wood landcover types)"
-            },
-            "id": "landcover",
-            "maxzoom": 22,
-            "minzoom": 9
-        },
-        {
-            "description": "Glaciers",
-            "fields": {},
-            "id": "glacier",
-            "maxzoom": 22,
-            "minzoom": 10
-        },
-        {
-            "description": "Wetland areas",
-            "fields": {
-                "name": "String. Name of the wetland",
-                "type": "String. One of marsh, swamp, bog, fen and tidalflat",
-                "way_area": "Number. Area of wetland in Mercator square metres"
-            },
-            "id": "wetland",
-            "maxzoom": 22,
-            "minzoom": 10
-        },
-        {
-            "description": "Hillshading polygons",
-            "fields": {
-                "level": "Number. The amount of hillshading, in steps of 5, from 150 (sun facing) to 180 (level) to 200 (shaded)",
-                "prio": "Do not use"
-            },
-            "id": "hillshade",
-            "maxzoom": 22,
-            "minzoom": 7
-        },
-        {
-            "description": "10 metre contours",
-            "fields": {
-                "height": "Number. Height in metres above sea level",
-                "priority": "String. One of major, medium, minor"
-            },
-            "id": "contour",
-            "maxzoom": 22,
-            "minzoom": 11
-        },
-        {
-            "description": "Water polygons",
-            "fields": {
-                "landuse": "String. One of reservoir, water, basin or null",
-                "natural": "String. One of lake, water or null",
-                "waterway": "String. One of dock, mill_pond, riverbank, canal or null"
-            },
-            "id": "water",
-            "maxzoom": 22,
-            "minzoom": 6
-        },
-        {
-            "description": "Linear water features - rivers, streams, canals etc",
-            "fields": {
-                "waterway": "String. One of river, stream, canal, ditch or drain"
-            },
-            "id": "waterway",
-            "maxzoom": 22,
-            "minzoom": 10
-        },
-        {
-            "description": "Selected water features",
-            "fields": {
-                "name": "String. The name of the feature",
-                "type": "One of dam, weir, lock_gate, pier, breakwater or groyne"
-            },
-            "id": "water-feature",
-            "maxzoom": 22,
-            "minzoom": 13
-        },
-        {
-            "description": "Ski pistes mapped as lines",
-            "fields": {
-                "piste:difficulty": "String. The difficulty rating of the piste, on of novice, easy, intermediate, advanced, expert, freeride, extreme or null"
-            },
-            "id": "piste-line",
-            "maxzoom": 22,
-            "minzoom": 13
-        },
-        {
-            "description": "Ski pistes mapped as areas",
-            "fields": {
-                "piste:difficulty": "String. The difficulty rating of the piste, on of novice, easy, intermediate, advanced, expert, freeride, extreme or null"
-            },
-            "id": "piste-area",
-            "maxzoom": 22,
-            "minzoom": 13
-        },
-        {
-            "description": "Ocean Polygons",
-            "fields": {},
-            "id": "ocean-lowzoom",
-            "maxzoom": 5,
-            "minzoom": 0
-        },
-        {
-            "description": "Ocean Polygons",
-            "fields": {},
-            "id": "ocean",
-            "maxzoom": 22,
-            "minzoom": 6
-        },
-        {
-            "description": "Ferry routes",
-            "fields": {
-                "name": "The name of the route",
-                "operator": "The operator of the route",
-                "ref": "The reference of the route"
-            },
-            "id": "ferries",
-            "maxzoom": 22,
-            "minzoom": 11
-        },
-        {
-            "description": "",
-            "fields": {
-                "aeroway": "String. One of runway, taxiway or apron"
-            },
-            "id": "aeroway-area",
-            "maxzoom": 22,
-            "minzoom": 11
-        },
-        {
-            "description": "",
-            "fields": {
-                "aeroway": "String. One of runway or taxiway"
-            },
-            "id": "aeroway",
-            "maxzoom": 22,
-            "minzoom": 11
-        },
-        {
-            "description": "Roads and paths mapped as areas",
-            "fields": {
-                "bicycle": "String. Bicycle permissions",
-                "foot": "String. Walker permissions",
-                "highway": "String. The highway classification, one of 'residential', 'unclassified', 'pedestrian', 'service', 'footway', 'living_street', 'track', 'path', 'cycleway', 'steps', 'via_ferrata', 'services'",
-                "horse": "String. Horse riding permissions",
-                "mtb": "String. Mountain biking permissions"
-            },
-            "id": "road-area",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "Golfing features",
-            "fields": {
-                "golf": "The type of golfing feature",
-                "name": "The name of the feature",
-                "par": "The par of the hole",
-                "ref": "The reference of the feature"
-            },
-            "id": "golf",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "Sports pitches. Uses the openstreetmap-fr scheme",
-            "fields": {},
-            "id": "sport-pitch",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "",
-            "fields": {
-                "aeroway": "String. This is 'terminal' for airport terminals",
-                "building": "String. The type of building"
-            },
-            "id": "building",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "",
-            "fields": {
-                "feature": "One of fence, wall, hedge or cliff"
-            },
-            "id": "barrier",
-            "maxzoom": 22,
-            "minzoom": 13
-        },
-        {
-            "description": "Railway sidings and yards",
-            "fields": {
-                "bridge": "String",
-                "railway": "String. The type of railway",
-                "tunnel": "String"
-            },
-            "id": "railway-siding",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "Railways, monorails, subways etc.",
-            "fields": {
-                "bridge": "String",
-                "railway": "String. The type of railway",
-                "tunnel": "String"
-            },
-            "id": "railway",
-            "maxzoom": 22,
-            "minzoom": 7
-        },
-        {
-            "description": "Paths",
-            "fields": {
-                "bicycle": "String",
-                "foot": "String",
-                "highway": "String. The type of path, on of 'path', 'footway', 'cycleway', 'bridleway', 'pedestrian', 'steps', 'via_ferrata'",
-                "horse": "String",
-                "mtb": "String",
-                "mtb:scale": "String",
-                "mtb:scale:imba": "String",
-                "mtb:scale:uphill": "String",
-                "sac_scale": "String",
-                "surface": "String",
-                "trail_visibility": "String"
-            },
-            "id": "path",
-            "maxzoom": 22,
-            "minzoom": 12
-        },
-        {
-            "description": "Lowzoom roads",
-            "fields": {
-                "bridge": "String",
-                "highway": "String. The type of highway, from motorway through tertiary including links",
-                "tunnel": "String"
-            },
-            "id": "road-lowzoom",
-            "maxzoom": 12,
-            "minzoom": 6
-        },
-        {
-            "description": "Roads",
-            "fields": {
-                "bridge": "String",
-                "cycleway": "String",
-                "cycleway_left": "String",
-                "cycleway_right": "String",
-                "highway": "String. The type of highway, from motorway through to track",
-                "layer": "Number. Relative layer compared to nearby features",
-                "tunnel": "String",
-                "z_order": "Number. The order in which the roads should be drawn"
-            },
-            "id": "road",
-            "maxzoom": 22,
-            "minzoom": 13
-        },
-        {
-            "description": "Snowmobile routes",
-            "fields": {
-                "ice_road": "String",
-                "snowmobile": "String. One of 'yes', 'designated', 'permissive'",
-                "toll": "String"
-            },
-            "id": "snowmobile",
-            "maxzoom": 22,
-            "minzoom": 12
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "hiking",
-            "maxzoom": 22,
-            "minzoom": 11
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "cycling-lowzoom",
-            "maxzoom": 12,
-            "minzoom": 5
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "cycling",
-            "maxzoom": 22,
-            "minzoom": 13
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "mountain-biking",
-            "maxzoom": 22,
-            "minzoom": 10
-        },
-        {
-            "description": "",
-            "fields": {
-                "aerialway": "The type of aerialway. One of chair_lift, cable_car, drag_lift, gondola, t-bar, j-bar."
-            },
-            "id": "aerialway",
-            "maxzoom": 22,
-            "minzoom": 13
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "power",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "Country Borders from Natural Earth",
-            "fields": {
-                "FID_ne_10m": "Number",
-                "adm0_a3_l": "String",
-                "adm0_a3_r": "String",
-                "adm0_left": "String",
-                "adm0_right": "String",
-                "adm0_usa": "Number",
-                "comment": "String",
-                "featurecla": "String",
-                "labelrank": "Number",
-                "name": "String",
-                "note_": "String",
-                "scalerank": "Number",
-                "sov_a3_l": "String",
-                "sov_a3_r": "String",
-                "type": "String"
-            },
-            "id": "country-line",
-            "maxzoom": 9,
-            "minzoom": 3
-        },
-        {
-            "description": "State borders from Natural Earth",
-            "fields": {
-                "adm0_a3": "String",
-                "adm0_name": "String",
-                "featurecla": "String",
-                "mapcolor13": "Number",
-                "mapcolor9": "Number",
-                "name": "String",
-                "name_alt_l": "String",
-                "name_alt_r": "String",
-                "name_l": "String",
-                "name_len_l": "Number",
-                "name_len_r": "Number",
-                "name_loc_l": "String",
-                "name_loc_r": "String",
-                "name_r": "String",
-                "note": "String",
-                "scalerank": "Number",
-                "shape_leng": "Number",
-                "sov_a3": "String"
-            },
-            "id": "state-line",
-            "maxzoom": 9,
-            "minzoom": 4
-        },
-        {
-            "description": "Country centroids, for label placement",
-            "fields": {
-                "labelrank": "Number",
-                "name": "String",
-                "scalerank": "Number"
-            },
-            "id": "country-label",
-            "maxzoom": 7,
-            "minzoom": 4
-        },
-        {
-            "description": "State centroids, for label placement",
-            "fields": {
-                "name": "String",
-                "postal": "String",
-                "sr_adm0_a3": "String"
-            },
-            "id": "state-label",
-            "maxzoom": 8,
-            "minzoom": 4
-        },
-        {
-            "description": "Cities",
-            "fields": {
-                "name": "String. The local name, followed by the English name if different. Contains a * to be used as a newline character",
-                "name_en": "String. The English name, or the local name if not present",
-                "name_local": "String. The local name",
-                "population": "Number"
-            },
-            "id": "city-label",
-            "maxzoom": 10,
-            "minzoom": 5
-        },
-        {
-            "description": "Place labels",
-            "fields": {
-                "name": "String. The local name, followed by the English name if different. Contains a * to be used as a newline character",
-                "name_en": "String. The English name, or the local name if not present",
-                "name_local": "String. The local name",
-                "place": "String",
-                "place_priority": "Number"
-            },
-            "id": "place-label",
-            "maxzoom": 22,
-            "minzoom": 9
-        },
-        {
-            "description": "Railway stations",
-            "fields": {
-                "railway": "String"
-            },
-            "id": "railway-station",
-            "maxzoom": 22,
-            "minzoom": 11
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "poi-label",
-            "maxzoom": 22,
-            "minzoom": 13
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "golf-label",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "glacier-label",
-            "maxzoom": 22,
-            "minzoom": 13
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "cycling-node-network-label",
-            "maxzoom": 22,
-            "minzoom": 11
-        },
-        {
-            "description": "",
-            "fields": {
-                "name": "String. Name of the hiking route",
-                "ref": "String. Reference of the hiking route",
-                "ref_length": "Number. Length of the route reference - useful for shields",
-                "symbol_code": "The osmc symbol code for the route"
-            },
-            "id": "hiking-label",
-            "maxzoom": 22,
-            "minzoom": 12
-        },
-        {
-            "description": "",
-            "fields": {
-                "name": "The name of the path"
-            },
-            "id": "path-label",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "road-label",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "water-label",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "landuse-label",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "landcover-label",
-            "maxzoom": 22,
-            "minzoom": 14
-        },
-        {
-            "description": "",
-            "fields": {},
-            "id": "waterway-label",
-            "maxzoom": 22,
-            "minzoom": 13
-        }
-    ]
-}
-Request CYCLE IMG
-image/jpeg
-200
-Request OSM
-text/xml; charset=utf-8
-200
+<__main__.User object at 0x006D8690>
+10511552199
+268
+339
+12
+road
+Casual
+162
+True
+True
+-64.84806, -149.77982
+-73.55076, 113.95448
+True
+True
+City
+<__main__.User object at 0x006D86B0>
+59307322299
+516
+713
+10
+road
+Casual
+16
+True
+True
+2.26607, -26.55958
+-67.59403, 60.40674
+True
+True
+City
+<__main__.User object at 0x006D86D0>
+29656423599
+639
+136
+36
+road
+Casual
+36
+True
+True
+-65.03884, 119.03813
+-79.10133, -68.16003
+True
+True
+City
+<__main__.User object at 0x006D86F0>
+87867253599
+866
+506
+4
+road
+Casual
+91
+True
+True
+-82.69159, -4.49499
+46.64781, -46.7465
+True
+True
+City
+<__main__.User object at 0x006D8710>
+68643159499
+321
+704
+1
+road
+Casual
+165
+True
+True
+30.80153, 133.7852
+77.9056, 48.31144
+True
+True
+City
+<__main__.User object at 0x006D8750>
+92462392499
+496
+963
+72
+road
+Casual
+66
+True
+True
+-86.4164, -145.95649
+0.83956, -46.10241
+True
+True
+City
+<__main__.User object at 0x006D8770>
+10227122299
+815
+744
+1
+road
+Casual
+65
+True
+True
+19.18272, -69.62187
+-18.80382, 128.09253
+True
+True
+City
+<__main__.User object at 0x006D8790>
+87433005999
+639
+327
+55
+road
+Casual
+33
+True
+True
+-34.66447, 27.33419
+-25.30892, -133.89461
+True
+True
+City
+<__main__.User object at 0x006D87B0>
+83334667199
+529
+460
+49
+road
+Casual
+84
+True
+True
+-74.87514, 21.97984
+-16.00667, -174.64552
+True
+True
+City
+<__main__.User object at 0x006D8730>
+41494561699
+190
+805
+40
+road
+Casual
+160
+True
+True
+19.01775, 80.96402
+26.57358, 136.58196
+True
+True
+City
+<__main__.User object at 0x006D87D0>
+14836125299
+597
+634
+71
+road
+Casual
+162
+True
+True
+78.45297, 46.79434
+-17.5174, 172.94862
+True
+True
+City
+<__main__.User object at 0x006D87F0>
+96315353899
+707
+806
+93
+road
+Casual
+96
+True
+True
+-82.17082, 104.11339
+-64.36684, -175.20066
+True
+True
+City
+<__main__.User object at 0x006D8810>
+14246503099
+450
+185
+93
+road
+Casual
+111
+True
+True
+-19.66464, -147.29513
+75.89813, 20.55872
+True
+True
+City
+<__main__.User object at 0x006D8830>
+56509967399
+554
+899
+43
+road
+Casual
+104
+True
+True
+75.30463, -69.87066
+24.48397, 44.32222
+True
+True
+City
+<__main__.User object at 0x006D8850>
+17678673699
+925
+182
+16
+road
+Casual
+43
+True
+True
+-44.38039, 50.22592
+-76.84871, 118.38105
+True
+True
+City
+<__main__.User object at 0x006D8870>
+31504632999
+346
+213
+86
+road
+Casual
+175
+True
+True
+-85.99942, 89.98938
+-88.40237, 0.11972
+True
+True
+City
+<__main__.User object at 0x006D8890>
+87297164999
+243
+675
+11
+road
+Casual
+140
+True
+True
+-88.06487, 115.64596
+28.7352, 102.98018
+True
+True
+City
+<__main__.User object at 0x006D88B0>
+11679374099
+759
+454
+17
+road
+Casual
+33
+True
+True
+57.85337, 87.43704
+12.43629, -56.15822
+True
+True
+City
+<__main__.User object at 0x006D88D0>
+94864359899
+776
+609
+95
+road
+Casual
+112
+True
+True
+46.53585, -39.6302
+6.66419, -12.6939
+True
+True
+City
+<__main__.User object at 0x006D88F0>
+92251674399
+558
+183
+81
+road
+Casual
+148
+True
+True
+-69.18731, -179.06029
+64.21241, -81.14771
+True
+True
+City
+<__main__.User object at 0x006D8910>
+37789509499
+512
+463
+35
+road
+Casual
+82
+True
+True
+41.25831, -119.34319
+-3.16054, -77.18649
+True
+True
+City
+<__main__.User object at 0x006D8930>
+23518649999
+194
+251
+48
+road
+Casual
+44
+True
+True
+-63.08242, 22.70444
+-11.52142, -37.46425
+True
+True
+City
+<__main__.User object at 0x006D8950>
+42521367299
+772
+318
+0
+road
+Casual
+96
+True
+True
+45.18809, 164.47677
+-30.90936, -166.14677
+True
+True
+City
+<__main__.User object at 0x006D8970>
+07440828199
+555
+371
+68
+road
+Casual
+146
+True
+True
+78.19199, -36.80733
+77.4308, -64.71709
+True
+True
+City
+<__main__.User object at 0x006D8990>
+49767226499
+518
+890
+17
+road
+Casual
+35
+True
+True
+-7.44408, -33.77731
+-29.21169, 51.58307
+True
+True
+City
+<__main__.User object at 0x006D89B0>
+28630134399
+255
+236
+45
+road
+Casual
+58
+True
+True
+6.43153, -60.26178
+46.92835, 61.78589
+True
+True
+City
+<__main__.User object at 0x006D89D0>
+94818189199
+741
+116
+59
+road
+Casual
+23
+True
+True
+83.95704, 48.82685
+22.24482, 37.53782
+True
+True
+City
+<__main__.User object at 0x006D89F0>
+92782677199
+882
+161
+67
+road
+Casual
+47
+True
+True
+5.31511, -105.9402
+34.17128, 38.5898
+True
+True
+City
+<__main__.User object at 0x006D8A10>
+01798144199
+857
+344
+60
+road
+Casual
+101
+True
+True
+-42.59672, 15.05463
+5.09946, -115.4072
+True
+True
+City
+<__main__.User object at 0x006D8A30>
+59381368699
+220
+929
+53
+road
+Casual
+55
+True
+True
+-28.73922, -104.40061
+84.52663, 79.80011
+True
+True
+City
+<__main__.User object at 0x006D8A50>
+18704990199
+744
+595
+85
+road
+Casual
+151
+True
+True
+-51.99486, -172.28037
+-63.24167, 24.49138
+True
+True
+City
+<__main__.User object at 0x006D8A70>
+92516426099
+839
+460
+87
+road
+Casual
+115
+True
+True
+80.38127, -130.10459
+83.28188, -146.31081
+True
+True
+City
+<__main__.User object at 0x006D8A90>
+47287604299
+752
+265
+64
+road
+Casual
+94
+True
+True
+-81.83205, -168.91552
+88.15007, 11.18807
+True
+True
+City
+<__main__.User object at 0x006D8AB0>
+02652665299
+736
+503
+91
+road
+Intermediate
+167
+True
+True
+-20.43112, -95.34075
+8.09381, 156.27775
+True
+True
+Country
+<__main__.User object at 0x006D8AD0>
+80275674199
+278
+933
+30
+road
+Intermediate
+7
+True
+True
+19.60126, -51.72533
+75.34103, -54.57403
+True
+True
+Country
+<__main__.User object at 0x006D8AF0>
+96520665999
+989
+784
+46
+road
+Intermediate
+40
+True
+True
+50.58712, -16.71526
+76.07209, 34.62422
+True
+True
+Country
+<__main__.User object at 0x006D8B10>
+32804400299
+449
+777
+0
+road
+Intermediate
+148
+True
+True
+77.759, -4.82013
+50.42254, 98.70039
+True
+True
+Country
+<__main__.User object at 0x006D8B30>
+00968330999
+480
+187
+14
+road
+Intermediate
+115
+True
+True
+88.19426, 157.77861
+-71.47508, -10.32087
+True
+True
+Country
+<__main__.User object at 0x006D8B50>
+33730459699
+918
+628
+35
+road
+Intermediate
+108
+True
+True
+-6.31033, -168.61716
+86.49619, 124.91656
+True
+True
+Country
+<__main__.User object at 0x006D8B70>
+62745280099
+132
+758
+96
+road
+Intermediate
+47
+True
+True
+-34.16735, -88.68888
+-70.02159, 161.90811
+True
+True
+Country
+<__main__.User object at 0x006D8B90>
+45857211399
+471
+193
+36
+road
+Intermediate
+150
+True
+True
+-24.66056, -82.75266
+16.61287, 151.33447
+True
+True
+Country
+<__main__.User object at 0x006D8BB0>
+04527139499
+181
+275
+36
+road
+Intermediate
+73
+True
+True
+6.58308, -77.75267
+75.97703, 168.89412
+True
+True
+Country
+<__main__.User object at 0x006D8BD0>
+78547043499
+530
+882
+56
+road
+Intermediate
+163
+True
+True
+-27.20835, 129.40028
+29.17368, 84.99482
+True
+True
+Country
+<__main__.User object at 0x006D8BF0>
+68276072899
+546
+506
+15
+road
+Intermediate
+126
+True
+True
+-58.54291, 175.3172
+-48.55494, -117.95183
+True
+True
+Country
+<__main__.User object at 0x006D8C10>
+17687804699
+703
+967
+71
+road
+Intermediate
+170
+True
+True
+-74.99223, -51.88168
+-76.41282, -75.94388
+True
+True
+Country
+<__main__.User object at 0x006D8C30>
+44866036799
+922
+842
+60
+road
+Intermediate
+144
+True
+True
+74.81296, -9.57081
+46.56037, 86.96428
+True
+True
+Country
+<__main__.User object at 0x006D8C50>
+76483419499
+543
+438
+56
+road
+Intermediate
+136
+True
+True
+80.77719, 139.30014
+-46.02866, -132.61882
+True
+True
+Country
+<__main__.User object at 0x006D8C70>
+85823755599
+281
+717
+8
+road
+Intermediate
+120
+True
+True
+73.97943, -18.00199
+-42.10448, -92.60712
+True
+True
+Country
+<__main__.User object at 0x006D8C90>
+43751399699
+836
+136
+50
+road
+Intermediate
+57
+True
+True
+65.39434, -164.41482
+-2.82471, -68.02141
+True
+True
+Country
+<__main__.User object at 0x006D8CB0>
+10995703799
+950
+432
+26
+road
+Intermediate
+8
+True
+True
+-64.05404, 164.53164
+-6.91979, -80.36812
+True
+True
+Country
+<__main__.User object at 0x006D8CD0>
+48781931699
+365
+840
+12
+mountain
+Intermediate
+133
+False
+False
+79.02872, 146.49669
+66.98613, 176.15556
+False
+False
+Country
+<__main__.User object at 0x006D8CF0>
+24574303499
+429
+459
+83
+mountain
+Intermediate
+86
+False
+False
+-53.78158, -78.35092
+58.85925, -0.72364
+False
+False
+Country
+<__main__.User object at 0x006D8D10>
+32555862399
+123
+232
+27
+mountain
+Intermediate
+119
+False
+False
+-45.54747, 25.09959
+-47.22892, -140.16624
+False
+False
+Country
+<__main__.User object at 0x006D8D30>
+93524214699
+690
+592
+78
+mountain
+Intermediate
+148
+False
+False
+23.64522, 124.48223
+-34.2626, 17.79548
+False
+False
+Country
+<__main__.User object at 0x006D8D50>
+97931003199
+404
+802
+20
+mountain
+Intermediate
+151
+False
+False
+-14.26999, -143.72122
+-46.9408, -40.31134
+False
+False
+Country
+<__main__.User object at 0x006D8D70>
+03501514199
+822
+492
+81
+mountain
+Intermediate
+11
+False
+False
+9.35465, -2.30318
+33.51038, -3.5865
+False
+False
+Country
+<__main__.User object at 0x006D8D90>
+65982644899
+137
+584
+36
+mountain
+Intermediate
+100
+False
+False
+46.91829, 91.63008
+-82.404, 124.62438
+False
+False
+Country
+<__main__.User object at 0x006D8DB0>
+64433436699
+647
+556
+87
+mountain
+Intermediate
+167
+False
+False
+46.74048, 96.27039
+65.37598, 30.20061
+False
+False
+Country
+<__main__.User object at 0x006D8DD0>
+75815194199
+526
+607
+34
+mountain
+Intermediate
+158
+False
+False
+46.49556, -108.34653
+0.32434, 10.55192
+False
+False
+Country
+<__main__.User object at 0x006D8DF0>
+57867592099
+390
+266
+26
+mountain
+Intermediate
+108
+False
+False
+-4.56702, -143.14129
+1.89336, 40.6852
+False
+False
+Country
+<__main__.User object at 0x006D8E10>
+58280944099
+716
+317
+33
+mountain
+Intermediate
+50
+False
+False
+40.94151, 76.20954
+-47.07534, -0.67283
+False
+False
+Country
+<__main__.User object at 0x006D8E30>
+62768832599
+705
+455
+8
+mountain
+Intermediate
+67
+False
+False
+30.20927, 55.23036
+-47.29376, 94.48378
+False
+False
+Country
+<__main__.User object at 0x006D8E50>
+97426764399
+810
+323
+92
+mountain
+Intermediate
+122
+False
+False
+-39.75616, -167.39495
+-8.31978, -156.07668
+False
+False
+Country
+<__main__.User object at 0x006D8E70>
+36378253299
+222
+373
+51
+mountain
+Intermediate
+121
+False
+False
+-17.62207, 49.2397
+-83.20582, -128.75156
+False
+False
+Country
+<__main__.User object at 0x006D8E90>
+45867787599
+130
+1000
+58
+mountain
+Intermediate
+176
+False
+False
+24.38812, 105.96894
+-87.21563, -36.25159
+False
+False
+Country
+<__main__.User object at 0x006D8EB0>
+28285101599
+107
+383
+77
+mountain
+Intermediate
+106
+False
+False
+-78.53601, 81.41402
+-47.48239, -129.74366
+False
+False
+Country
+<__main__.User object at 0x006D8ED0>
+96584561099
+127
+556
+15
+mountain
+Professional
+113
+False
+False
+-59.13957, -103.36297
+-11.48824, -107.47451
+False
+False
+All
+<__main__.User object at 0x006D8EF0>
+70343528499
+404
+295
+52
+mountain
+Professional
+35
+False
+False
+11.91634, -16.08678
+50.82921, 124.61948
+False
+False
+All
+<__main__.User object at 0x006D8F10>
+83346167399
+576
+437
+52
+mountain
+Professional
+84
+False
+False
+-51.4799, 119.20134
+-80.06342, -58.90189
+False
+False
+All
+<__main__.User object at 0x006D8F30>
+56909266399
+479
+230
+34
+mountain
+Professional
+28
+False
+False
+-10.50736, -21.06955
+56.02708, 165.33187
+False
+False
+All
+<__main__.User object at 0x006D8F50>
+52291095899
+123
+777
+24
+mountain
+Professional
+155
+False
+False
+-33.2853, -137.26051
+-73.08161, -144.89906
+False
+False
+All
+<__main__.User object at 0x006D8F70>
+65213349899
+480
+371
+72
+mountain
+Professional
+169
+False
+False
+-21.67387, -47.09929
+46.76606, 104.93338
+False
+False
+All
+<__main__.User object at 0x006D8F90>
+13292590399
+935
+358
+93
+mountain
+Professional
+177
+False
+False
+-54.10031, -94.67001
+36.96701, 130.4264
+False
+False
+All
+<__main__.User object at 0x006D8FB0>
+76364914999
+584
+665
+5
+mountain
+Professional
+173
+False
+False
+70.83887, -76.00345
+-30.21681, -87.39339
+False
+False
+All
+<__main__.User object at 0x006D8FD0>
+88709947999
+824
+410
+74
+mountain
+Professional
+48
+False
+False
+17.80633, -72.42315
+13.9954, 139.30464
+False
+False
+All
+<__main__.User object at 0x006D8FF0>
+09710964599
+672
+877
+16
+mountain
+Professional
+95
+False
+False
+-61.0174, -122.72358
+82.34231, 173.97085
+False
+False
+All
+<__main__.User object at 0x006DD030>
+15600307599
+345
+210
+5
+mountain
+Professional
+122
+False
+False
+-82.46319, -128.10283
+-58.90826, 77.77168
+False
+False
+All
+<__main__.User object at 0x006DD050>
+50963493799
+437
+666
+98
+mountain
+Professional
+90
+False
+False
+-35.69213, 34.91674
+-65.16025, 112.24094
+False
+False
+All
+<__main__.User object at 0x006DD070>
+69903611699
+156
+984
+78
+mountain
+Professional
+34
+False
+False
+23.69565, -82.07899
+-64.22603, -141.12146
+False
+False
+All
+<__main__.User object at 0x006DD090>
+76244308599
+691
+627
+15
+mountain
+Professional
+173
+False
+False
+-70.43114, 161.63262
+56.96215, 159.05528
+False
+False
+All
+<__main__.User object at 0x006DD0B0>
+29219648299
+956
+475
+18
+mountain
+Professional
+41
+False
+False
+-57.36175, -60.31585
+28.1366, 91.44978
+False
+False
+All
+<__main__.User object at 0x006DD0D0>
+60415055799
+467
+802
+40
+mountain
+Professional
+171
+False
+False
+24.82432, -95.29185
+64.45, -45.35751
+False
+False
+All
+<__main__.User object at 0x006DD0F0>
+97759041199
+523
+544
+69
+mountain
+Professional
+63
+False
+False
+-57.67713, 90.6791
+-63.06926, -83.08196
+False
+False
+All
+<__main__.User object at 0x006DD110>
+27704636399
+931
+450
+3
+mountain
+Professional
+159
+False
+False
+48.15226, 142.5298
+32.53681, 19.01914
+False
+False
+All
+<__main__.User object at 0x006DD130>
+95719992199
+495
+545
+32
+mountain
+Professional
+157
+False
+False
+-29.20349, -66.62903
+83.79439, -163.6685
+False
+False
+All
+<__main__.User object at 0x006DD150>
+70637509799
+370
+901
+41
+mountain
+Professional
+168
+False
+False
+19.47558, -148.83223
+-43.69042, 32.80512
+False
+False
+All
+<__main__.User object at 0x006DD170>
+11317805699
+761
+663
+17
+mountain
+Professional
+105
+False
+False
+-76.00996, 126.10571
+5.01421, -103.94371
+False
+False
+All
+<__main__.User object at 0x006DD190>
+47518731499
+232
+541
+24
+mountain
+Professional
+105
+False
+False
+-26.22932, 96.07635
+52.94344, -170.18697
+False
+False
+All
+<__main__.User object at 0x006DD1B0>
+88716134899
+746
+899
+72
+mountain
+Professional
+27
+False
+False
+-18.971, -34.37207
+-16.261, 45.31657
+False
+False
+All
+<__main__.User object at 0x006DD1D0>
+23651812799
+350
+460
+16
+mountain
+Professional
+175
+False
+False
+64.63107, 129.92808
+-17.09618, -146.75114
+False
+False
+All
+<__main__.User object at 0x006DD1F0>
+25582561599
+604
+580
+98
+mountain
+Professional
+157
+False
+False
+54.33105, -141.3647
+-86.49542, 2.90162
+False
+False
+All
+<__main__.User object at 0x006DD210>
+11614377999
+410
+903
+94
+mountain
+Professional
+16
+False
+False
+-60.05548, 159.48949
+-66.19684, 83.85342
+False
+False
+All
+<__main__.User object at 0x006DD230>
+02549038999
+294
+901
+6
+mountain
+Professional
+38
+False
+False
+-83.96841, -63.66998
+85.66815, -126.25489
+False
+False
+All
+<__main__.User object at 0x006DD250>
+56796780999
+571
+379
+30
+mountain
+Professional
+43
+False
+False
+-44.03749, 44.18027
+20.82889, -118.03844
+False
+False
+All
+<__main__.User object at 0x006DD270>
+47819611999
+831
+260
+11
+mountain
+Professional
+76
+False
+False
+-60.88275, -46.00539
+-3.65551, -167.27535
+False
+False
+All
+<__main__.User object at 0x006DD290>
+06816698299
+603
+285
+84
+mountain
+Professional
+115
+False
+False
+-86.85436, 177.04674
+-38.16266, 174.53448
+False
+False
+All
+<__main__.User object at 0x006DD2B0>
+73752220399
+313
+573
+54
+mountain
+Professional
+141
+False
+False
+59.3704, -65.45708
+-49.44217, 139.89127
+False
+False
+All
+<__main__.User object at 0x006DD2D0>
+85802734499
+139
+398
+68
+mountain
+Professional
+95
+False
+False
+45.80311, -178.48039
+48.24657, 52.54041
+False
+False
+All
+<__main__.User object at 0x006DD2F0>
+51536549799
+693
+702
+2
+mountain
+Professional
+55
+False
+False
+-70.70086, -155.08079
+29.75422, -149.077
+False
+False
+All
+<__main__.User object at 0x006DD310>
+62251100699
+984
+411
+47
+mountain
+Casual
+81
+False
+False
+28.37097, 136.64176
+62.88373, -178.55032
+False
+False
+City

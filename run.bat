@@ -1,1 +1,1 @@
-python cycle_elevation_routing.py > log.txt 2>&1
+python user_profile.py > log.txt 2>&1
