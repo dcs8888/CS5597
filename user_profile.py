@@ -1,5 +1,6 @@
 import json
 import pandas
+import numpy
 
 class User:
     def __init__(self, user_id):
@@ -25,15 +26,20 @@ def importData(users):
 
 def main():
 
-    current_user_id = 68643159499
+    current_user_id = 10511552199
 
     users = UserProfiles()
     users_pandas_data, routes_pandas_data = importData(users)
     
     current_user = users_pandas_data.loc[users_pandas_data['UserID'] == current_user_id]
-
-
-    final = pandas.merge(current_user, routes_pandas_data, on=['CycleType', 'CyclistLevel', 'PreferBikeLanes'])
+    
+    final = routes_pandas_data.loc[(routes_pandas_data['ElevationAvg'].values <= current_user['ElevationAvg'].values) & 
+                                   (routes_pandas_data['ElevationMax'].values <= current_user['ElevationMax'].values) & 
+                                   (routes_pandas_data['ElevationMin'].values >= current_user['ElevationMin'].values) & 
+                                   (routes_pandas_data['CycleType'].values == current_user['CycleType'].values) & 
+                                   (routes_pandas_data['CyclistLevel'].values == current_user['CyclistLevel'].values) & 
+                                   (routes_pandas_data['PreferBikeLanes'].values == current_user['PreferBikeLanes'].values)
+                                  ]
 
     final.to_json('out.json')
 

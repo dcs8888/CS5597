@@ -5,73 +5,40 @@
 	"CyclistLevel": {
 		"0": "Casual"
 	},
-	"ElevationAvg_x": {
-		"0": 321
+	"ElevationAvg": {
+		"0": 100
 	},
-	"ElevationMax_x": {
-		"0": 704
+	"ElevationMax": {
+		"0": 120
 	},
-	"ElevationMin_x": {
-		"0": 1
+	"ElevationMin": {
+		"0": 12
 	},
-	"EndLocation_x": {
-		"0": "77.9056, 48.31144"
+	"EndLocation": {
+		"0": "-73.55076, 113.95448"
 	},
 	"PreferBikeLanes": {
 		"0": "True"
 	},
-	"PreferBikeTrials_x": {
-		"0": "True"
-	},
-	"ReducedTraffic_x": {
-		"0": "True"
-	},
-	"ReturnRoute_x": {
-		"0": "True"
-	},
-	"RouteLocationPreference_x": {
-		"0": "City"
-	},
-	"StartLocation_x": {
-		"0": "30.80153, 133.7852"
-	},
-	"TimeAvailable_x": {
-		"0": 165
-	},
-	"UserID": {
-		"0": 68643159499
-	},
-	"ElevationAvg_y": {
-		"0": 100
-	},
-	"ElevationMax_y": {
-		"0": 120
-	},
-	"ElevationMin_y": {
-		"0": 12
-	},
-	"EndLocation_y": {
-		"0": "-73.55076, 113.95448"
-	},
-	"PreferBikeTrials_y": {
+	"PreferBikeTrials": {
 		"0": "False"
 	},
-	"ReducedTraffic_y": {
+	"ReducedTraffic": {
 		"0": "True"
 	},
-	"ReturnRoute_y": {
+	"ReturnRoute": {
 		"0": "False"
 	},
 	"RouteID": {
 		"0": 1
 	},
-	"RouteLocationPreference_y": {
+	"RouteLocationPreference": {
 		"0": "City"
 	},
-	"StartLocation_y": {
+	"StartLocation": {
 		"0": "-64.84806, -149.77982"
 	},
-	"TimeAvailable_y": {
+	"TimeAvailable": {
 		"0": 162
 	}
 }
