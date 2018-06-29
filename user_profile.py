@@ -26,41 +26,40 @@ def importData(users):
 
 def main():
 
-    current_user_id = 1630101668599
+    current_user_id = 1691090622299
 
     users = UserProfiles()
     users_pandas_data, routes_pandas_data = importData(users)
-    
+
     current_user = users_pandas_data.loc[users_pandas_data['UserID'] == current_user_id]
     index = int(current_user.index.values)
 
     priority_list = current_user['Priority']
-    
-    first = routes_pandas_data.loc[(routes_pandas_data['ElevationAvg'].values <= current_user['ElevationAvg'].values) & 
-                                   (routes_pandas_data['ElevationMax'].values <= current_user['ElevationMax'].values) & 
-                                   (routes_pandas_data['ElevationMin'].values >= current_user['ElevationMin'].values)
-                                   ]
-    
-    route_id = (first['RouteID'].values)
-    print(route_id.size)
-    
-    if route_id.size == 0:
-        first.to_json('out.json')
-        return
-    
-    for item in priority_list[index].split(', '):
 
+    first = routes_pandas_data.loc[(routes_pandas_data['ElevationAvg'].values <= current_user['ElevationAvg'].values) &
+                                   (routes_pandas_data['ElevationMax'].values <= current_user['ElevationMax'].values) &
+                                   (routes_pandas_data['ElevationMin'].values >= current_user['ElevationMin'].values) & 
+                                   (routes_pandas_data['TimeAvailable'].values <= current_user['TimeAvailable'].values)
+                                   ]
+
+    for item in priority_list[index].split(', '):
+        print(item)
         final = first.loc[(first[item].values == current_user[item].values)]
         
-        final_route_id = (final['RouteID'].values)
+        final_route_id = final['RouteID'].values
         print(final_route_id.size)
-        
+
         if final_route_id.size == 0:
             first.to_json('out.json')
             return
+        elif final_route_id.size == 1:
+            final.to_json('out.json')
+            return
         
+        print("After Does first == final: " + str(first.equals(final)))
+
         first = final
     final.to_json('out.json')
-
+        
 if __name__ == "__main__":
    main()
