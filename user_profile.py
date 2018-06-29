@@ -51,14 +51,17 @@ def main():
 
         if final_route_id.size == 0:
             first.to_json('out.json')
+            print("Used First")
             return
         elif final_route_id.size == 1:
             final.to_json('out.json')
+            print("Used Final")
             return
         
         print("After Does first == final: " + str(first.equals(final)))
 
         first = final
+    print("Used Final Complete")
     final.to_json('out.json')
         
 if __name__ == "__main__":

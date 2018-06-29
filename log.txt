@@ -1,2 +1,22 @@
 CyclistLevel
-1
+2
+After Does first == final: False
+BikeLane
+2
+After Does first == final: True
+BikeTrail
+2
+After Does first == final: True
+CycleType
+2
+After Does first == final: True
+ReturnRoute
+2
+After Does first == final: True
+RouteLocationPreference
+2
+After Does first == final: True
+ReducedTraffic
+2
+After Does first == final: True
+Used Final Complete

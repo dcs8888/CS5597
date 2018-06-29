@@ -1,38 +1,50 @@
 {
 	"BikeLane": {
-		"2": "true"
+		"2": "true",
+		"22": "true"
 	},
 	"BikeTrail": {
-		"2": "true"
+		"2": "true",
+		"22": "true"
 	},
 	"CycleType": {
-		"2": "road"
+		"2": "road",
+		"22": "road"
 	},
 	"CyclistLevel": {
-		"2": "casual"
+		"2": "casual",
+		"22": "casual"
 	},
 	"ElevationAvg": {
-		"2": 652
+		"2": 652,
+		"22": 612
 	},
 	"ElevationMax": {
-		"2": 551
+		"2": 551,
+		"22": 755
 	},
 	"ElevationMin": {
-		"2": 58
+		"2": 58,
+		"22": 39
 	},
 	"ReducedTraffic": {
-		"2": "true"
+		"2": "true",
+		"22": "true"
 	},
 	"ReturnRoute": {
-		"2": "true"
+		"2": "true",
+		"22": "true"
 	},
 	"RouteID": {
-		"2": 3
+		"2": 3,
+		"22": 23
 	},
 	"RouteLocationPreference": {
-		"2": "city"
+		"2": "city",
+		"22": "city"
 	},
 	"TimeAvailable": {
-		"2": 40
+		"2": 40,
+		"22": 42
 	}
 }
