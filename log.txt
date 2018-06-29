@@ -1,1 +1,7 @@
-<class 'pandas.core.series.Series'>
+5
+3
+3
+3
+2
+2
+0

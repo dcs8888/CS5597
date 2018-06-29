@@ -12,7 +12,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "CycleType, ReducedTraffic, ElevationMax, ElevationMin, BikeLane, BikeTrail, CyclistLevel, TimeAvailable, RouteLocationPreference, ElevationAvg"
+		"Priority": "CycleType, ReducedTraffic, BikeLane, BikeTrail, CyclistLevel, TimeAvailable, RouteLocationPreference"
 	},
 	{
 		"UserID": "1630101668599",
@@ -27,7 +27,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ElevationMax, CycleType, RouteLocationPreference, BikeTrail, ElevationMin, CyclistLevel, ElevationAvg, ReducedTraffic, TimeAvailable, ReturnRoute"
+		"Priority": "CycleType, RouteLocationPreference, BikeTrail, CyclistLevel, ReducedTraffic, TimeAvailable, ReturnRoute"
 	},
 	{
 		"UserID": "1679040958799",
@@ -42,7 +42,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "CyclistLevel, TimeAvailable, ElevationMax, RouteLocationPreference, ElevationMin, CycleType, ElevationAvg, ReturnRoute, BikeLane, BikeTrail"
+		"Priority": "CyclistLevel, TimeAvailable, RouteLocationPreference, CycleType, ReturnRoute, BikeLane, BikeTrail"
 	},
 	{
 		"UserID": "1680082065399",
@@ -57,7 +57,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "BikeLane, ElevationAvg, RouteLocationPreference, CycleType, ElevationMax, ReducedTraffic, ElevationMin, BikeTrail, TimeAvailable, ReturnRoute"
+		"Priority": "BikeLane, RouteLocationPreference, CycleType, ReducedTraffic, BikeTrail, TimeAvailable, ReturnRoute"
 	},
 	{
 		"UserID": "1649110518399",
@@ -72,7 +72,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "BikeLane, TimeAvailable, ElevationAvg, CyclistLevel, CycleType, ElevationMin, RouteLocationPreference, BikeTrail, ReturnRoute, ElevationMax"
+		"Priority": "BikeLane, TimeAvailable, CyclistLevel, CycleType, RouteLocationPreference, BikeTrail, ReturnRoute"
 	},
 	{
 		"UserID": "1637110308699",
@@ -87,7 +87,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ReturnRoute, BikeLane, ElevationMax, TimeAvailable, BikeTrail, ElevationAvg, ReducedTraffic, CyclistLevel, CycleType, RouteLocationPreference"
+		"Priority": "ReturnRoute, BikeLane, TimeAvailable, BikeTrail, ReducedTraffic, CyclistLevel, CycleType, RouteLocationPreference"
 	},
 	{
 		"UserID": "1621082800499",
@@ -102,7 +102,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ReturnRoute, BikeLane, ElevationAvg, CycleType, ElevationMin, ReducedTraffic, TimeAvailable, BikeTrail, ElevationMax, RouteLocationPreference"
+		"Priority": "ReturnRoute, BikeLane, CycleType, ReducedTraffic, TimeAvailable, BikeTrail, RouteLocationPreference"
 	},
 	{
 		"UserID": "1673082484099",
@@ -117,7 +117,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ElevationMin, CyclistLevel, BikeTrail, RouteLocationPreference, ReturnRoute, BikeLane, TimeAvailable, ElevationAvg, ElevationMax, ReducedTraffic"
+		"Priority": "CyclistLevel, BikeTrail, RouteLocationPreference, ReturnRoute, BikeLane, TimeAvailable, ReducedTraffic"
 	},
 	{
 		"UserID": "1671112198299",
@@ -132,7 +132,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ReducedTraffic, RouteLocationPreference, ElevationAvg, CyclistLevel, CycleType, ReturnRoute, BikeLane, ElevationMin, ElevationMax, BikeTrail"
+		"Priority": "ReducedTraffic, RouteLocationPreference, CyclistLevel, CycleType, ReturnRoute, BikeLane, BikeTrail"
 	},
 	{
 		"UserID": "1667041646599",
@@ -147,7 +147,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "CycleType, CyclistLevel, BikeLane, ElevationAvg, ElevationMax, ElevationMin, ReturnRoute, TimeAvailable, ReducedTraffic, BikeTrail"
+		"Priority": "CycleType, CyclistLevel, BikeLane, ReturnRoute, TimeAvailable, ReducedTraffic, BikeTrail"
 	},
 	{
 		"UserID": "1620011877399",
@@ -162,7 +162,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "BikeTrail, RouteLocationPreference, ReducedTraffic, CyclistLevel, TimeAvailable, CycleType, ReturnRoute, ElevationMax, ElevationMin, ElevationAvg"
+		"Priority": "BikeTrail, RouteLocationPreference, ReducedTraffic, CyclistLevel, TimeAvailable, CycleType, ReturnRoute"
 	},
 	{
 		"UserID": "1660072102299",
@@ -177,7 +177,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ReducedTraffic, BikeLane, ElevationAvg, ElevationMax, TimeAvailable, RouteLocationPreference, CycleType, CyclistLevel, ReturnRoute, ElevationMin"
+		"Priority": "ReducedTraffic, BikeLane, TimeAvailable, RouteLocationPreference, CycleType, CyclistLevel, ReturnRoute"
 	},
 	{
 		"UserID": "1619072712499",
@@ -192,7 +192,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "CyclistLevel, ElevationMax, ElevationAvg, RouteLocationPreference, ReturnRoute, BikeLane, ReducedTraffic, TimeAvailable, BikeTrail, ElevationMin"
+		"Priority": "CyclistLevel, RouteLocationPreference, ReturnRoute, BikeLane, ReducedTraffic, TimeAvailable, BikeTrail"
 	},
 	{
 		"UserID": "1695123084499",
@@ -207,7 +207,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "CyclistLevel, TimeAvailable, ElevationMin, BikeLane, ReducedTraffic, ElevationMax, ElevationAvg, BikeTrail, ReturnRoute, CycleType"
+		"Priority": "CyclistLevel, TimeAvailable, BikeLane, ReducedTraffic, BikeTrail, ReturnRoute, CycleType"
 	},
 	{
 		"UserID": "1665020918599",
@@ -222,7 +222,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ReturnRoute, ReducedTraffic, CyclistLevel, TimeAvailable, ElevationMin, BikeLane, BikeTrail, ElevationAvg, RouteLocationPreference, ElevationMax"
+		"Priority": "ReturnRoute, ReducedTraffic, CyclistLevel, TimeAvailable, BikeLane, BikeTrail, RouteLocationPreference"
 	},
 	{
 		"UserID": "1688081082699",
@@ -237,7 +237,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "CyclistLevel, ReturnRoute, BikeLane, ElevationMax, ElevationAvg, ElevationMin, CycleType, BikeTrail, TimeAvailable, RouteLocationPreference"
+		"Priority": "CyclistLevel, ReturnRoute, BikeLane, CycleType, BikeTrail, TimeAvailable, RouteLocationPreference"
 	},
 	{
 		"UserID": "1652070553699",
@@ -252,7 +252,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ElevationAvg, RouteLocationPreference, ReturnRoute, TimeAvailable, BikeLane, BikeTrail, ReducedTraffic, CyclistLevel, ElevationMin, CycleType"
+		"Priority": "RouteLocationPreference, ReturnRoute, TimeAvailable, BikeLane, BikeTrail, ReducedTraffic, CyclistLevel, CycleType"
 	},
 	{
 		"UserID": "1613060602899",
@@ -267,7 +267,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ReturnRoute, ElevationMin, ElevationMax, CyclistLevel, CycleType, ReducedTraffic, BikeTrail, BikeLane, RouteLocationPreference, ElevationAvg"
+		"Priority": "ReturnRoute, CyclistLevel, CycleType, ReducedTraffic, BikeTrail, BikeLane, RouteLocationPreference"
 	},
 	{
 		"UserID": "1684051026999",
@@ -282,7 +282,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ReducedTraffic, ElevationAvg, ElevationMax, CycleType, TimeAvailable, BikeLane, CyclistLevel, ElevationMin, RouteLocationPreference, BikeTrail"
+		"Priority": "ReducedTraffic, CycleType, TimeAvailable, BikeLane, CyclistLevel, RouteLocationPreference, BikeTrail"
 	},
 	{
 		"UserID": "1664011526199",
@@ -297,7 +297,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ReturnRoute, CycleType, TimeAvailable, RouteLocationPreference, ElevationMin, CyclistLevel, BikeTrail, ElevationAvg, ReducedTraffic, ElevationMax"
+		"Priority": "ReturnRoute, CycleType, TimeAvailable, RouteLocationPreference, CyclistLevel, BikeTrail, ReducedTraffic"
 	},
 	{
 		"UserID": "1645080914699",
@@ -312,7 +312,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "TimeAvailable, BikeTrail, ElevationAvg, CycleType, ReducedTraffic, ElevationMin, RouteLocationPreference, CyclistLevel, ReturnRoute, BikeLane, ElevationMax"
+		"Priority": "TimeAvailable, BikeTrail, CycleType, ReducedTraffic, RouteLocationPreference, CyclistLevel, ReturnRoute, BikeLane"
 	},
 	{
 		"UserID": "1699080774899",
@@ -327,7 +327,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ReturnRoute, ReducedTraffic, BikeLane, BikeTrail, ElevationMax, ElevationAvg, CycleType, RouteLocationPreference, CyclistLevel, TimeAvailable"
+		"Priority": "ReturnRoute, ReducedTraffic, BikeLane, BikeTrail, CycleType, RouteLocationPreference, CyclistLevel, TimeAvailable"
 	},
 	{
 		"UserID": "1612061402199",
@@ -342,7 +342,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "CyclistLevel, BikeLane, ReturnRoute, CycleType, BikeTrail, ElevationMax, ReducedTraffic, ElevationAvg, RouteLocationPreference, TimeAvailable"
+		"Priority": "CyclistLevel, BikeLane, ReturnRoute, CycleType, BikeTrail, ReducedTraffic, RouteLocationPreference, TimeAvailable"
 	},
 	{
 		"UserID": "1686112843499",
@@ -357,7 +357,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ElevationMax, ReturnRoute, BikeLane, ReducedTraffic, TimeAvailable, CycleType, RouteLocationPreference, ElevationAvg, BikeTrail, CyclistLevel"
+		"Priority": "ReturnRoute, BikeLane, ReducedTraffic, TimeAvailable, CycleType, RouteLocationPreference, BikeTrail, CyclistLevel"
 	},
 	{
 		"UserID": "1674102575899",
@@ -372,7 +372,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "CyclistLevel, ElevationMax, TimeAvailable, ReducedTraffic, BikeTrail, ReturnRoute, ElevationAvg, RouteLocationPreference, BikeLane, CycleType"
+		"Priority": "CyclistLevel, TimeAvailable, ReducedTraffic, BikeTrail, ReturnRoute, RouteLocationPreference, BikeLane, CycleType"
 	},
 	{
 		"UserID": "1640040874699",
@@ -387,7 +387,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "CyclistLevel, ReducedTraffic, BikeLane, BikeTrail, ElevationAvg, RouteLocationPreference, ElevationMax, TimeAvailable, CycleType, ElevationMin"
+		"Priority": "CyclistLevel, ReducedTraffic, BikeLane, BikeTrail, RouteLocationPreference, TimeAvailable, CycleType"
 	},
 	{
 		"UserID": "1630090763299",
@@ -402,7 +402,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ReducedTraffic, CycleType, ElevationAvg, TimeAvailable, CyclistLevel, BikeTrail, BikeLane, ReturnRoute, ElevationMax, RouteLocationPreference"
+		"Priority": "ReducedTraffic, CycleType, TimeAvailable, CyclistLevel, BikeTrail, BikeLane, ReturnRoute, RouteLocationPreference"
 	},
 	{
 		"UserID": "1650070692299",
@@ -417,7 +417,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "TimeAvailable, BikeTrail, ReducedTraffic, ElevationMax, CycleType, RouteLocationPreference, CyclistLevel, ElevationMin, ReturnRoute, BikeLane"
+		"Priority": "TimeAvailable, BikeTrail, ReducedTraffic, CycleType, RouteLocationPreference, CyclistLevel, ReturnRoute, BikeLane"
 	},
 	{
 		"UserID": "1660102584399",
@@ -432,7 +432,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "CycleType, TimeAvailable, CyclistLevel, BikeTrail, ElevationMax, RouteLocationPreference, ReducedTraffic, ReturnRoute, BikeLane, ElevationAvg"
+		"Priority": "CycleType, TimeAvailable, CyclistLevel, BikeTrail, RouteLocationPreference, ReducedTraffic, ReturnRoute, BikeLane"
 	},
 	{
 		"UserID": "1684100236399",
@@ -447,7 +447,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "BikeLane, ElevationMax, CycleType, ReducedTraffic, ElevationMin, BikeTrail, ElevationAvg, TimeAvailable, ReturnRoute, CyclistLevel"
+		"Priority": "BikeLane, CycleType, ReducedTraffic, BikeTrail, TimeAvailable, ReturnRoute, CyclistLevel"
 	},
 	{
 		"UserID": "1667042388999",
@@ -462,7 +462,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ElevationAvg, ReducedTraffic, CycleType, ElevationMax, ReturnRoute, TimeAvailable, ElevationMin, BikeLane, RouteLocationPreference, CyclistLevel"
+		"Priority": "ReducedTraffic, CycleType, ReturnRoute, TimeAvailable, BikeLane, RouteLocationPreference, CyclistLevel"
 	},
 	{
 		"UserID": "1661070213499",
@@ -477,7 +477,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "CyclistLevel, TimeAvailable, BikeTrail, ElevationAvg, CycleType, ElevationMax, RouteLocationPreference, BikeLane, ElevationMin, ReducedTraffic"
+		"Priority": "CyclistLevel, TimeAvailable, BikeTrail, CycleType, RouteLocationPreference, BikeLane, ReducedTraffic"
 	},
 	{
 		"UserID": "1655090834599",
@@ -492,7 +492,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "CycleType, ReducedTraffic, TimeAvailable, ReturnRoute, RouteLocationPreference, ElevationMax, ElevationMin, ElevationAvg, BikeTrail, BikeLane"
+		"Priority": "CycleType, ReducedTraffic, TimeAvailable, ReturnRoute, RouteLocationPreference, BikeTrail, BikeLane"
 	},
 	{
 		"UserID": "1667042464999",
@@ -507,7 +507,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ElevationAvg, RouteLocationPreference, TimeAvailable, BikeTrail, CyclistLevel, ReturnRoute, CycleType, ElevationMax, ElevationMin, ReducedTraffic, BikeLane"
+		"Priority": "RouteLocationPreference, TimeAvailable, BikeTrail, CyclistLevel, ReturnRoute, CycleType, ReducedTraffic, BikeLane"
 	},
 	{
 		"UserID": "1628100999099",
@@ -522,7 +522,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ElevationAvg, ElevationMin, BikeTrail, RouteLocationPreference, ReducedTraffic, BikeLane, CyclistLevel, CycleType, TimeAvailable, ReturnRoute, ElevationMax"
+		"Priority": "BikeTrail, RouteLocationPreference, ReducedTraffic, BikeLane, CyclistLevel, CycleType, TimeAvailable, ReturnRoute"
 	},
 	{
 		"UserID": "1617100738299",
@@ -537,7 +537,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "RouteLocationPreference, BikeTrail, ReducedTraffic, ReturnRoute, CycleType, CyclistLevel, ElevationAvg, BikeLane, TimeAvailable, ElevationMax"
+		"Priority": "RouteLocationPreference, BikeTrail, ReducedTraffic, ReturnRoute, CycleType, CyclistLevel, BikeLane, TimeAvailable"
 	},
 	{
 		"UserID": "1684081465099",
@@ -552,7 +552,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "CycleType, CyclistLevel, ElevationAvg, RouteLocationPreference, ReducedTraffic, ElevationMax, BikeTrail, TimeAvailable, ReturnRoute, BikeLane"
+		"Priority": "CycleType, CyclistLevel, RouteLocationPreference, ReducedTraffic, BikeTrail, TimeAvailable, ReturnRoute, BikeLane"
 	},
 	{
 		"UserID": "1691012841199",
@@ -567,7 +567,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "RouteLocationPreference, BikeTrail, CycleType, ElevationMin, CyclistLevel, TimeAvailable, ElevationMax, ElevationAvg, ReturnRoute, BikeLane"
+		"Priority": "RouteLocationPreference, BikeTrail, CycleType, CyclistLevel, TimeAvailable, ReturnRoute, BikeLane"
 	},
 	{
 		"UserID": "1607090646399",
@@ -582,7 +582,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "CycleType, BikeLane, ElevationMin, ReducedTraffic, ReturnRoute, BikeTrail, RouteLocationPreference, ElevationAvg, ElevationMax, TimeAvailable"
+		"Priority": "CycleType, BikeLane, ReducedTraffic, ReturnRoute, BikeTrail, RouteLocationPreference, TimeAvailable"
 	},
 	{
 		"UserID": "1662081408799",
@@ -597,7 +597,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ReturnRoute, ReducedTraffic, TimeAvailable, RouteLocationPreference, CyclistLevel, CycleType, ElevationMax, BikeTrail, BikeLane, ElevationAvg"
+		"Priority": "ReturnRoute, ReducedTraffic, TimeAvailable, RouteLocationPreference, CyclistLevel, CycleType, BikeTrail, BikeLane"
 	},
 	{
 		"UserID": "1658022429099",
@@ -612,7 +612,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "RouteLocationPreference, ReturnRoute, BikeLane, ElevationMin, ElevationMax, CycleType, ElevationAvg, CyclistLevel, BikeTrail, ReducedTraffic"
+		"Priority": "RouteLocationPreference, ReturnRoute, BikeLane, CycleType, CyclistLevel, BikeTrail, ReducedTraffic"
 	},
 	{
 		"UserID": "1663053084899",
@@ -627,7 +627,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "RouteLocationPreference, CyclistLevel, ElevationMin, ReturnRoute, BikeTrail, ElevationAvg, ElevationMax, ReducedTraffic, CycleType, BikeLane"
+		"Priority": "RouteLocationPreference, CyclistLevel, ReturnRoute, BikeTrail, ReducedTraffic, CycleType, BikeLane"
 	},
 	{
 		"UserID": "1660102462699",
@@ -642,7 +642,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "ElevationAvg, TimeAvailable, ReturnRoute, ElevationMax, ElevationMin, BikeLane, ReducedTraffic, BikeTrail, RouteLocationPreference, CyclistLevel"
+		"Priority": "TimeAvailable, ReturnRoute, BikeLane, ReducedTraffic, BikeTrail, RouteLocationPreference, CyclistLevel"
 	},
 	{
 		"UserID": "1691040464399",
@@ -657,7 +657,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "CycleType, ElevationMin, ReducedTraffic, BikeLane, RouteLocationPreference, TimeAvailable, CyclistLevel, BikeTrail, ReturnRoute, ElevationAvg, ElevationMax"
+		"Priority": "CycleType, ReducedTraffic, BikeLane, RouteLocationPreference, TimeAvailable, CyclistLevel, BikeTrail, ReturnRoute"
 	},
 	{
 		"UserID": "1653010227099",
@@ -672,7 +672,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "CycleType, ElevationMin, ReducedTraffic, RouteLocationPreference, ElevationAvg, ReturnRoute, BikeTrail, BikeLane, CyclistLevel, ElevationMax"
+		"Priority": "CycleType, ReducedTraffic, RouteLocationPreference, ReturnRoute, BikeTrail, BikeLane, CyclistLevel"
 	},
 	{
 		"UserID": "1674110893799",
@@ -687,7 +687,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "BikeTrail, TimeAvailable, ElevationAvg, RouteLocationPreference, ElevationMax, CycleType, ReturnRoute, ReducedTraffic, BikeLane, CyclistLevel"
+		"Priority": "BikeTrail, TimeAvailable, RouteLocationPreference, CycleType, ReturnRoute, ReducedTraffic, BikeLane, CyclistLevel"
 	},
 	{
 		"UserID": "1616040915399",
@@ -702,7 +702,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "CyclistLevel, CycleType, ElevationAvg, ElevationMin, TimeAvailable, BikeLane, BikeTrail, ElevationMax, ReducedTraffic, ReturnRoute"
+		"Priority": "CyclistLevel, CycleType, TimeAvailable, BikeLane, BikeTrail, ReducedTraffic, ReturnRoute"
 	},
 	{
 		"UserID": "1659052049799",
@@ -717,7 +717,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "RouteLocationPreference, ReducedTraffic, TimeAvailable, ElevationMax, ElevationAvg, ReturnRoute, BikeTrail, BikeLane, CyclistLevel, ElevationMin"
+		"Priority": "RouteLocationPreference, ReducedTraffic, TimeAvailable, ReturnRoute, BikeTrail, BikeLane, CyclistLevel"
 	},
 	{
 		"UserID": "1647110312799",
@@ -732,7 +732,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "BikeTrail, CycleType, ReturnRoute, ElevationMin, BikeLane, ReducedTraffic, TimeAvailable, ElevationMax, CyclistLevel, ElevationAvg"
+		"Priority": "BikeTrail, CycleType, ReturnRoute, BikeLane, ReducedTraffic, TimeAvailable, CyclistLevel"
 	},
 	{
 		"UserID": "1664050328999",
@@ -747,7 +747,7 @@
 		"ReturnRoute": "true",
 		"ReducedTraffic": "true",
 		"RouteLocationPreference": "city",
-		"Priority": "RouteLocationPreference, BikeLane, CycleType, TimeAvailable, BikeTrail, ReturnRoute, ElevationAvg, CyclistLevel, ElevationMax, ReducedTraffic, ElevationMin"
+		"Priority": "RouteLocationPreference, BikeLane, CycleType, TimeAvailable, BikeTrail, ReturnRoute, CyclistLevel, ReducedTraffic"
 	},
 	{
 		"UserID": "1607021391699",
@@ -762,7 +762,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ElevationMin, CyclistLevel, ElevationAvg, ReturnRoute, ReducedTraffic, BikeLane, CycleType, BikeTrail, RouteLocationPreference, ElevationMax"
+		"Priority": "CyclistLevel, ReturnRoute, ReducedTraffic, BikeLane, CycleType, BikeTrail, RouteLocationPreference"
 	},
 	{
 		"UserID": "1675032159699",
@@ -777,7 +777,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ElevationAvg, BikeTrail, ElevationMin, CyclistLevel, TimeAvailable, ReturnRoute, BikeLane, CycleType, ElevationMax, ReducedTraffic"
+		"Priority": "BikeTrail, CyclistLevel, TimeAvailable, ReturnRoute, BikeLane, CycleType, ReducedTraffic"
 	},
 	{
 		"UserID": "1642032924999",
@@ -792,7 +792,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "CyclistLevel, BikeLane, RouteLocationPreference, BikeTrail, ReducedTraffic, ReturnRoute, CycleType, TimeAvailable, ElevationMin, ElevationAvg, ElevationMax"
+		"Priority": "CyclistLevel, BikeLane, RouteLocationPreference, BikeTrail, ReducedTraffic, ReturnRoute, CycleType, TimeAvailable"
 	},
 	{
 		"UserID": "1673120250299",
@@ -807,7 +807,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "TimeAvailable, ElevationMin, BikeLane, RouteLocationPreference, ReturnRoute, ElevationAvg, BikeTrail, ElevationMax, CycleType, ReducedTraffic"
+		"Priority": "TimeAvailable, BikeLane, RouteLocationPreference, ReturnRoute, BikeTrail, CycleType, ReducedTraffic"
 	},
 	{
 		"UserID": "1671081433499",
@@ -822,7 +822,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "RouteLocationPreference, CyclistLevel, TimeAvailable, ElevationMin, BikeTrail, ReturnRoute, ElevationAvg, CycleType, BikeLane, ElevationMax"
+		"Priority": "RouteLocationPreference, CyclistLevel, TimeAvailable, BikeTrail, ReturnRoute, CycleType, BikeLane"
 	},
 	{
 		"UserID": "1635071049099",
@@ -837,7 +837,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ReducedTraffic, ReturnRoute, CycleType, ElevationAvg, BikeLane, TimeAvailable, ElevationMax, RouteLocationPreference, CyclistLevel, BikeTrail"
+		"Priority": "ReducedTraffic, ReturnRoute, CycleType, BikeLane, TimeAvailable, RouteLocationPreference, CyclistLevel, BikeTrail"
 	},
 	{
 		"UserID": "1628072148399",
@@ -852,7 +852,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "RouteLocationPreference, ElevationMin, ReducedTraffic, CyclistLevel, ElevationMax, BikeLane, ElevationAvg, CycleType, BikeTrail, ReturnRoute"
+		"Priority": "RouteLocationPreference, ReducedTraffic, CyclistLevel, BikeLane, CycleType, BikeTrail, ReturnRoute"
 	},
 	{
 		"UserID": "1658121292199",
@@ -867,7 +867,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "BikeLane, RouteLocationPreference, TimeAvailable, ReturnRoute, BikeTrail, ElevationMin, CycleType, ElevationAvg, ElevationMax, ReducedTraffic"
+		"Priority": "BikeLane, RouteLocationPreference, TimeAvailable, ReturnRoute, BikeTrail, CycleType, ReducedTraffic"
 	},
 	{
 		"UserID": "1614101184599",
@@ -882,7 +882,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "RouteLocationPreference, CyclistLevel, CycleType, ElevationAvg, TimeAvailable, ReturnRoute, ReducedTraffic, ElevationMin, BikeTrail, BikeLane"
+		"Priority": "RouteLocationPreference, CyclistLevel, CycleType, TimeAvailable, ReturnRoute, ReducedTraffic, BikeTrail, BikeLane"
 	},
 	{
 		"UserID": "1677052598699",
@@ -897,7 +897,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "BikeTrail, ElevationMin, CyclistLevel, ReducedTraffic, TimeAvailable, ReturnRoute, CycleType, BikeLane, ElevationAvg, ElevationMax, RouteLocationPreference"
+		"Priority": "BikeTrail, CyclistLevel, ReducedTraffic, TimeAvailable, ReturnRoute, CycleType, BikeLane, RouteLocationPreference"
 	},
 	{
 		"UserID": "1684121778999",
@@ -912,7 +912,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "BikeLane, TimeAvailable, CyclistLevel, ElevationAvg, ReducedTraffic, ElevationMax, ElevationMin, CycleType, ReturnRoute, BikeTrail"
+		"Priority": "BikeLane, TimeAvailable, CyclistLevel, ReducedTraffic, CycleType, ReturnRoute, BikeTrail"
 	},
 	{
 		"UserID": "1692042809599",
@@ -927,7 +927,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "BikeTrail, ReducedTraffic, CycleType, CyclistLevel, BikeLane, ReturnRoute, ElevationAvg, RouteLocationPreference, ElevationMin, ElevationMax"
+		"Priority": "BikeTrail, ReducedTraffic, CycleType, CyclistLevel, BikeLane, ReturnRoute, RouteLocationPreference"
 	},
 	{
 		"UserID": "1688112424099",
@@ -942,7 +942,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "TimeAvailable, ReducedTraffic, CycleType, RouteLocationPreference, ReturnRoute, ElevationMax, CyclistLevel, BikeTrail, ElevationAvg, ElevationMin"
+		"Priority": "TimeAvailable, ReducedTraffic, CycleType, RouteLocationPreference, ReturnRoute, CyclistLevel, BikeTrail"
 	},
 	{
 		"UserID": "1690061299399",
@@ -957,7 +957,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ElevationMin, ElevationMax, CycleType, CyclistLevel, ReducedTraffic, RouteLocationPreference, BikeLane, TimeAvailable, ReturnRoute, ElevationAvg, BikeTrail"
+		"Priority": "CycleType, CyclistLevel, ReducedTraffic, RouteLocationPreference, BikeLane, TimeAvailable, ReturnRoute, BikeTrail"
 	},
 	{
 		"UserID": "1663090336899",
@@ -972,7 +972,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "CyclistLevel, CycleType, RouteLocationPreference, BikeLane, ElevationMax, ElevationAvg, ReturnRoute, TimeAvailable, ReducedTraffic, BikeTrail"
+		"Priority": "CyclistLevel, CycleType, RouteLocationPreference, BikeLane, ReturnRoute, TimeAvailable, ReducedTraffic, BikeTrail"
 	},
 	{
 		"UserID": "1637030543699",
@@ -987,7 +987,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "RouteLocationPreference, ElevationAvg, BikeTrail, ElevationMax, CyclistLevel, BikeLane, ReturnRoute, ElevationMin, TimeAvailable, ReducedTraffic"
+		"Priority": "RouteLocationPreference, BikeTrail, CyclistLevel, BikeLane, ReturnRoute, TimeAvailable, ReducedTraffic"
 	},
 	{
 		"UserID": "1644032453999",
@@ -1002,7 +1002,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "CyclistLevel, BikeTrail, CycleType, RouteLocationPreference, ReducedTraffic, ElevationMin, ElevationMax, BikeLane, TimeAvailable, ElevationAvg"
+		"Priority": "CyclistLevel, BikeTrail, CycleType, RouteLocationPreference, ReducedTraffic, BikeLane, TimeAvailable"
 	},
 	{
 		"UserID": "1694010679099",
@@ -1017,7 +1017,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "TimeAvailable, CyclistLevel, ElevationMin, CycleType, BikeTrail, RouteLocationPreference, ElevationAvg, ElevationMax, ReducedTraffic, ReturnRoute"
+		"Priority": "TimeAvailable, CyclistLevel, CycleType, BikeTrail, RouteLocationPreference, ReducedTraffic, ReturnRoute"
 	},
 	{
 		"UserID": "1674021985299",
@@ -1032,7 +1032,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ElevationMin, ElevationAvg, CyclistLevel, CycleType, BikeLane, ReturnRoute, BikeTrail, ReducedTraffic, TimeAvailable, ElevationMax"
+		"Priority": "CyclistLevel, CycleType, BikeLane, ReturnRoute, BikeTrail, ReducedTraffic, TimeAvailable"
 	},
 	{
 		"UserID": "1695032352299",
@@ -1047,7 +1047,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ElevationAvg, BikeTrail, BikeLane, ReducedTraffic, CyclistLevel, CycleType, RouteLocationPreference, ElevationMin, ReturnRoute, TimeAvailable, ElevationMax"
+		"Priority": "BikeTrail, BikeLane, ReducedTraffic, CyclistLevel, CycleType, RouteLocationPreference, ReturnRoute, TimeAvailable"
 	},
 	{
 		"UserID": "1667020752699",
@@ -1062,7 +1062,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "TimeAvailable, BikeLane, CycleType, ElevationAvg, ReturnRoute, RouteLocationPreference, ElevationMax, CyclistLevel, ReducedTraffic, ElevationMin"
+		"Priority": "TimeAvailable, BikeLane, CycleType, ReturnRoute, RouteLocationPreference, CyclistLevel, ReducedTraffic"
 	},
 	{
 		"UserID": "1669052637699",
@@ -1077,7 +1077,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "CycleType, CyclistLevel, BikeLane, RouteLocationPreference, TimeAvailable, ReturnRoute, ElevationMin, ReducedTraffic, ElevationAvg, BikeTrail"
+		"Priority": "CycleType, CyclistLevel, BikeLane, RouteLocationPreference, TimeAvailable, ReturnRoute, ReducedTraffic, BikeTrail"
 	},
 	{
 		"UserID": "1640121607899",
@@ -1092,7 +1092,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ElevationAvg, RouteLocationPreference, ElevationMax, ReducedTraffic, TimeAvailable, CyclistLevel, CycleType, ElevationMin, ReturnRoute, BikeLane, BikeTrail"
+		"Priority": "RouteLocationPreference, ReducedTraffic, TimeAvailable, CyclistLevel, CycleType, ReturnRoute, BikeLane, BikeTrail"
 	},
 	{
 		"UserID": "1611050171899",
@@ -1107,7 +1107,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ReducedTraffic, ReturnRoute, ElevationMin, ElevationMax, BikeTrail, BikeLane, CyclistLevel, TimeAvailable, RouteLocationPreference, ElevationAvg, CycleType"
+		"Priority": "ReducedTraffic, ReturnRoute, BikeTrail, BikeLane, CyclistLevel, TimeAvailable, RouteLocationPreference, CycleType"
 	},
 	{
 		"UserID": "1621120529599",
@@ -1122,7 +1122,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "BikeLane, CyclistLevel, RouteLocationPreference, CycleType, ElevationMin, ReducedTraffic, ReturnRoute, TimeAvailable, BikeTrail, ElevationAvg"
+		"Priority": "BikeLane, CyclistLevel, RouteLocationPreference, CycleType, ReducedTraffic, ReturnRoute, TimeAvailable, BikeTrail"
 	},
 	{
 		"UserID": "1618051331299",
@@ -1137,7 +1137,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ReturnRoute, ReducedTraffic, TimeAvailable, RouteLocationPreference, ElevationMin, ElevationMax, ElevationAvg, CycleType, BikeTrail, CyclistLevel"
+		"Priority": "ReturnRoute, ReducedTraffic, TimeAvailable, RouteLocationPreference, CycleType, BikeTrail, CyclistLevel"
 	},
 	{
 		"UserID": "1634061634999",
@@ -1152,7 +1152,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "CycleType, ReducedTraffic, ReturnRoute, TimeAvailable, BikeLane, BikeTrail, ElevationAvg, CyclistLevel, RouteLocationPreference, ElevationMin"
+		"Priority": "CycleType, ReducedTraffic, ReturnRoute, TimeAvailable, BikeLane, BikeTrail, CyclistLevel, RouteLocationPreference"
 	},
 	{
 		"UserID": "1644050347399",
@@ -1167,7 +1167,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ElevationAvg, ReducedTraffic, RouteLocationPreference, CycleType, CyclistLevel, BikeTrail, ElevationMax, ReturnRoute, BikeLane, ElevationMin"
+		"Priority": "ReducedTraffic, RouteLocationPreference, CycleType, CyclistLevel, BikeTrail, ReturnRoute, BikeLane"
 	},
 	{
 		"UserID": "1629101726899",
@@ -1182,7 +1182,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "TimeAvailable, ReturnRoute, ElevationMin, ElevationMax, CyclistLevel, ElevationAvg, BikeTrail, CycleType, RouteLocationPreference, BikeLane"
+		"Priority": "TimeAvailable, ReturnRoute, CyclistLevel, BikeTrail, CycleType, RouteLocationPreference, BikeLane"
 	},
 	{
 		"UserID": "1615011152799",
@@ -1197,7 +1197,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "RouteLocationPreference, ReducedTraffic, ReturnRoute, BikeLane, CycleType, ElevationAvg, BikeTrail, ElevationMin, CyclistLevel, TimeAvailable"
+		"Priority": "RouteLocationPreference, ReducedTraffic, ReturnRoute, BikeLane, CycleType, BikeTrail, CyclistLevel, TimeAvailable"
 	},
 	{
 		"UserID": "1622040434599",
@@ -1212,7 +1212,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ElevationMax, TimeAvailable, ReturnRoute, CycleType, ElevationMin, ReducedTraffic, BikeTrail, BikeLane, RouteLocationPreference, CyclistLevel"
+		"Priority": "TimeAvailable, ReturnRoute, CycleType, ReducedTraffic, BikeTrail, BikeLane, RouteLocationPreference, CyclistLevel"
 	},
 	{
 		"UserID": "1657031422999",
@@ -1227,7 +1227,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ReturnRoute, ReducedTraffic, BikeLane, ElevationAvg, CyclistLevel, TimeAvailable, BikeTrail, CycleType, ElevationMin, RouteLocationPreference"
+		"Priority": "ReturnRoute, ReducedTraffic, BikeLane, CyclistLevel, TimeAvailable, BikeTrail, CycleType, RouteLocationPreference"
 	},
 	{
 		"UserID": "1682122673399",
@@ -1242,7 +1242,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "RouteLocationPreference, ReducedTraffic, ReturnRoute, ElevationAvg, CycleType, BikeLane, ElevationMax, BikeTrail, ElevationMin, CyclistLevel"
+		"Priority": "RouteLocationPreference, ReducedTraffic, ReturnRoute, CycleType, BikeLane, BikeTrail, CyclistLevel"
 	},
 	{
 		"UserID": "1637100131099",
@@ -1257,7 +1257,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "BikeLane, CyclistLevel, CycleType, TimeAvailable, ReturnRoute, ElevationAvg, RouteLocationPreference, ReducedTraffic, ElevationMax, ElevationMin"
+		"Priority": "BikeLane, CyclistLevel, CycleType, TimeAvailable, ReturnRoute, RouteLocationPreference, ReducedTraffic"
 	},
 	{
 		"UserID": "1647010104899",
@@ -1272,7 +1272,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "BikeLane, ReducedTraffic, CyclistLevel, ReturnRoute, BikeTrail, ElevationMin, RouteLocationPreference, CycleType, ElevationMax, TimeAvailable"
+		"Priority": "BikeLane, ReducedTraffic, CyclistLevel, ReturnRoute, BikeTrail, RouteLocationPreference, CycleType, TimeAvailable"
 	},
 	{
 		"UserID": "1666090879499",
@@ -1287,7 +1287,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ElevationMax, CycleType, BikeTrail, ReducedTraffic, ReturnRoute, BikeLane, CyclistLevel, RouteLocationPreference, ElevationAvg, TimeAvailable"
+		"Priority": "CycleType, BikeTrail, ReducedTraffic, ReturnRoute, BikeLane, CyclistLevel, RouteLocationPreference, TimeAvailable"
 	},
 	{
 		"UserID": "1679030586499",
@@ -1302,7 +1302,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ElevationAvg, ReturnRoute, ReducedTraffic, BikeLane, ElevationMax, CycleType, ElevationMin, TimeAvailable, BikeTrail, RouteLocationPreference"
+		"Priority": "ReturnRoute, ReducedTraffic, BikeLane, CycleType, TimeAvailable, BikeTrail, RouteLocationPreference"
 	},
 	{
 		"UserID": "1601091762199",
@@ -1317,7 +1317,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ElevationMin, BikeLane, CycleType, TimeAvailable, ReturnRoute, ElevationAvg, ReducedTraffic, ElevationMax, RouteLocationPreference, BikeTrail"
+		"Priority": "BikeLane, CycleType, TimeAvailable, ReturnRoute, ReducedTraffic, RouteLocationPreference, BikeTrail"
 	},
 	{
 		"UserID": "1610071855099",
@@ -1332,7 +1332,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ElevationMin, ReducedTraffic, CyclistLevel, TimeAvailable, ElevationAvg, CycleType, BikeTrail, BikeLane, RouteLocationPreference, ReturnRoute"
+		"Priority": "ReducedTraffic, CyclistLevel, TimeAvailable, CycleType, BikeTrail, BikeLane, RouteLocationPreference, ReturnRoute"
 	},
 	{
 		"UserID": "1614062620299",
@@ -1347,7 +1347,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "TimeAvailable, ElevationMin, ElevationAvg, BikeTrail, ReducedTraffic, ElevationMax, CycleType, RouteLocationPreference, CyclistLevel, BikeLane"
+		"Priority": "TimeAvailable, BikeTrail, ReducedTraffic, CycleType, RouteLocationPreference, CyclistLevel, BikeLane"
 	},
 	{
 		"UserID": "1641050844099",
@@ -1362,7 +1362,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ReducedTraffic, CycleType, RouteLocationPreference, BikeLane, BikeTrail, CyclistLevel, TimeAvailable, ElevationMin, ElevationAvg, ElevationMax"
+		"Priority": "ReducedTraffic, CycleType, RouteLocationPreference, BikeLane, BikeTrail, CyclistLevel, TimeAvailable"
 	},
 	{
 		"UserID": "1674083087199",
@@ -1377,7 +1377,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ReducedTraffic, CyclistLevel, ElevationAvg, ElevationMax, RouteLocationPreference, BikeTrail, ReturnRoute, CycleType, BikeLane, ElevationMin"
+		"Priority": "ReducedTraffic, CyclistLevel, RouteLocationPreference, BikeTrail, ReturnRoute, CycleType, BikeLane"
 	},
 	{
 		"UserID": "1626072213699",
@@ -1392,7 +1392,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ReturnRoute, ReducedTraffic, BikeLane, TimeAvailable, CyclistLevel, RouteLocationPreference, ElevationMax, BikeTrail, CycleType, ElevationMin"
+		"Priority": "ReturnRoute, ReducedTraffic, BikeLane, TimeAvailable, CyclistLevel, RouteLocationPreference, BikeTrail, CycleType"
 	},
 	{
 		"UserID": "1659100195299",
@@ -1407,7 +1407,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "RouteLocationPreference, TimeAvailable, ElevationMax, ElevationAvg, CycleType, CyclistLevel, BikeLane, ReturnRoute, ReducedTraffic, ElevationMin"
+		"Priority": "RouteLocationPreference, TimeAvailable, CycleType, CyclistLevel, BikeLane, ReturnRoute, ReducedTraffic"
 	},
 	{
 		"UserID": "1643122586799",
@@ -1422,7 +1422,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ElevationMax, ElevationAvg, BikeLane, ReducedTraffic, ElevationMin, CyclistLevel, CycleType, ReturnRoute, BikeTrail, TimeAvailable"
+		"Priority": "BikeLane, ReducedTraffic, CyclistLevel, CycleType, ReturnRoute, BikeTrail, TimeAvailable"
 	},
 	{
 		"UserID": "1616051966799",
@@ -1437,7 +1437,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ReducedTraffic, CyclistLevel, BikeTrail, ElevationMax, CycleType, ReturnRoute, TimeAvailable, BikeLane, ElevationAvg, RouteLocationPreference"
+		"Priority": "ReducedTraffic, CyclistLevel, BikeTrail, CycleType, ReturnRoute, TimeAvailable, BikeLane, RouteLocationPreference"
 	},
 	{
 		"UserID": "1622082335899",
@@ -1452,7 +1452,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "ElevationMax, BikeLane, CycleType, ElevationAvg, ReturnRoute, RouteLocationPreference, CyclistLevel, BikeTrail, TimeAvailable, ElevationMin"
+		"Priority": "BikeLane, CycleType, ReturnRoute, RouteLocationPreference, CyclistLevel, BikeTrail, TimeAvailable"
 	},
 	{
 		"UserID": "1652100569499",
@@ -1467,7 +1467,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "CycleType, ElevationMin, ElevationAvg, BikeTrail, TimeAvailable, ElevationMax, CyclistLevel, BikeLane, ReducedTraffic, ReturnRoute"
+		"Priority": "CycleType, BikeTrail, TimeAvailable, CyclistLevel, BikeLane, ReducedTraffic, ReturnRoute"
 	},
 	{
 		"UserID": "1623121594099",
@@ -1482,7 +1482,7 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "BikeTrail, BikeLane, ReturnRoute, CyclistLevel, RouteLocationPreference, TimeAvailable, ElevationAvg, CycleType, ElevationMin, ElevationMax"
+		"Priority": "BikeTrail, BikeLane, ReturnRoute, CyclistLevel, RouteLocationPreference, TimeAvailable, CycleType"
 	},
 	{
 		"UserID": "1636040677099",
@@ -1497,6 +1497,6 @@
 		"ReturnRoute": "false",
 		"ReducedTraffic": "false",
 		"RouteLocationPreference": "country",
-		"Priority": "BikeLane, RouteLocationPreference, ReturnRoute, CyclistLevel, ReducedTraffic, ElevationAvg, BikeTrail, CycleType, ElevationMax, ElevationMin"
+		"Priority": "BikeLane, RouteLocationPreference, ReturnRoute, CyclistLevel, ReducedTraffic, BikeTrail, CycleType"
 	}
 ]
