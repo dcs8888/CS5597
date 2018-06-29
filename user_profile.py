@@ -26,20 +26,39 @@ def importData(users):
 
 def main():
 
-    current_user_id = 10511552199
+    current_user_id = 1690042923599
 
     users = UserProfiles()
     users_pandas_data, routes_pandas_data = importData(users)
     
     current_user = users_pandas_data.loc[users_pandas_data['UserID'] == current_user_id]
+    priority_list = current_user['Priority']
     
-    final = routes_pandas_data.loc[(routes_pandas_data['ElevationAvg'].values <= current_user['ElevationAvg'].values) & 
-                                   (routes_pandas_data['ElevationMax'].values <= current_user['ElevationMax'].values) & 
-                                   (routes_pandas_data['ElevationMin'].values >= current_user['ElevationMin'].values) & 
-                                   (routes_pandas_data['CycleType'].values == current_user['CycleType'].values) & 
-                                   (routes_pandas_data['CyclistLevel'].values == current_user['CyclistLevel'].values) & 
-                                   (routes_pandas_data['PreferBikeLanes'].values == current_user['PreferBikeLanes'].values)
-                                  ]
+    print(type(priority_list))
+    
+    test = None
+    
+    for item in priority_list[0].split(', '):
+        
+        if current_user[item].dtype == 'object':
+            test = (routes_pandas_data[item].values == current_user[item].values)
+        if (current_user[item].dtype == 'int64') & (item == 'ElevationMin'):
+            test = (routes_pandas_data[item].values >= current_user[item].values)
+        if (current_user[item].dtype == 'int64') & (item == 'ElevationMax'):
+            test = (routes_pandas_data[item].values <= current_user[item].values)
+        if (current_user[item].dtype == 'int64') & (item == 'ElevationAvg'):
+            test = (routes_pandas_data[item].values <= current_user[item].values)
+
+    final = routes_pandas_data.loc[ test ]
+    
+    
+    # final = routes_pandas_data.loc[(routes_pandas_data['ElevationAvg'].values <= current_user['ElevationAvg'].values) & 
+                                   # (routes_pandas_data['ElevationMax'].values <= current_user['ElevationMax'].values) & 
+                                   # (routes_pandas_data['ElevationMin'].values >= current_user['ElevationMin'].values) & 
+                                   # (routes_pandas_data['CycleType'].values == current_user['CycleType'].values) & 
+                                   # (routes_pandas_data['CyclistLevel'].values == current_user['CyclistLevel'].values) & 
+                                   # (routes_pandas_data['BikeLane'].values == current_user['BikeLane'].values)
+                                  # ]
 
     final.to_json('out.json')
 
