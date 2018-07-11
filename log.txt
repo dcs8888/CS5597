@@ -1,22 +1,184 @@
-CyclistLevel
-2
-After Does first == final: False
-BikeLane
-2
-After Does first == final: True
-BikeTrail
-2
-After Does first == final: True
-CycleType
-2
-After Does first == final: True
-ReturnRoute
-2
-After Does first == final: True
-RouteLocationPreference
-2
-After Does first == final: True
-ReducedTraffic
-2
-After Does first == final: True
-Used Final Complete
+{
+	1234: {
+		'priority': ['time', 'bike lanes', 'elevation', 'distance'],
+		'route_info': {
+			'bike lanes': {
+				'high': {
+					'traffic': {
+						'high': 5,
+						'medium': 15,
+						'low': 26
+					}
+				},
+				'medium': {
+					'traffic': {
+						'high': 8,
+						'medium': 14,
+						'low': 20
+					}
+				},
+				'low': {
+					'traffic': {
+						'high': 3,
+						'medium': 8,
+						'low': 5
+					}
+				}
+			},
+			'time consuming': {
+				'quick': {
+					'time of day': {
+						'night': 2,
+						'evening': 39,
+						'afternoon': 5,
+						'morning': 5
+					},
+					'weather': {
+						'clear': 14,
+						'snow': 0,
+						'rain': 1,
+						'windy': 3,
+						'fog': 4,
+						'cloudy': 30,
+						'storm': 0
+					},
+					'temperature': {
+						'cold': 3,
+						'warm': 11,
+						'hot': 4,
+						'mild': 21,
+						'cool': 5
+					},
+					'weekday': {
+						'monday': 2,
+						'tuesday': 3,
+						'friday': 4,
+						'wednesday': 2,
+						'thursday': 2,
+						'sunday': 18,
+						'saturday': 20
+					}
+				},
+				'very': {
+					'time of day': {
+						'night': 1,
+						'evening': 14,
+						'afternoon': 0,
+						'morning': 0
+					},
+					'weather': {
+						'clear': 7,
+						'snow': 0,
+						'rain': 0,
+						'windy': 0,
+						'fog': 0,
+						'cloudy': 10,
+						'storm': 0
+					},
+					'temperature': {
+						'cold': 0,
+						'warm': 7,
+						'hot': 0,
+						'mild': 14,
+						'cool': 1
+					},
+					'weekday': {
+						'monday': 1,
+						'tuesday': 0,
+						'friday': 1,
+						'wednesday': 0,
+						'thursday': 0,
+						'sunday': 7,
+						'saturday': 8
+					}
+				},
+				'average': {
+					'time of day': {
+						'night': 5,
+						'evening': 25,
+						'afternoon': 2,
+						'morning': 2
+					},
+					'weather': {
+						'clear': 12,
+						'snow': 0,
+						'rain': 0,
+						'windy': 1,
+						'fog': 2,
+						'cloudy': 15,
+						'storm': 0
+					},
+					'temperature': {
+						'cold': 1,
+						'warm': 8,
+						'hot': 2,
+						'mild': 21,
+						'cool': 2
+					},
+					'weekday': {
+						'monday': 1,
+						'tuesday': 2,
+						'friday': 2,
+						'wednesday': 1,
+						'thursday': 2,
+						'sunday': 13,
+						'saturday': 11
+					}
+				}
+			},
+			'elevation': {
+				'high': {
+					'weather': {
+						'clear': 10,
+						'snow': 0,
+						'rain': 0,
+						'windy': 1,
+						'fog': 0,
+						'cloudy': 12,
+						'storm': 0
+					},
+					'traffic': {
+						'high': 1,
+						'medium': 4,
+						'low': 5
+					}
+				},
+				'medium': {
+					'weather': {
+						'clear': 16,
+						'snow': 0,
+						'rain': 0,
+						'windy': 1,
+						'fog': 0,
+						'cloudy': 14,
+						'storm': 0
+					},
+					'traffic': {
+						'high': 22,
+						'medium': 12,
+						'low': 15
+					}
+				},
+				'low': {
+					'weather': {
+						'clear': 25,
+						'snow': 0,
+						'rain': 0,
+						'windy': 2,
+						'fog': 2,
+						'cloudy': 17,
+						'storm': 0
+					},
+					'traffic': {
+						'high': 12,
+						'medium': 18,
+						'low': 22
+					}
+				}
+			}
+		}
+	},
+	1111: {
+		'priority': ['bike lanes', 'time', 'distance', 'elevation']
+	}
+}
