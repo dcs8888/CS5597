@@ -100,13 +100,15 @@ def main():
             if 'Weekday' in matrix:
                 y_index = weekday_index
 
-            print(user_1234_info[matrix])
-            print(len(user_1234_info[matrix]))
             print(matrix)
             print(x_index)
             print(y_index)
             
-            print(user_1234_info[matrix][0][0])
+            print(user_1234_info[matrix])
+            
+            user_1234_info[matrix][y_index][x_index] = 1
+            
+            print(user_1234_info[matrix])
                 
             # user_1234_info.putQueue(
                 
