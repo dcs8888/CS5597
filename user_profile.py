@@ -1,18 +1,26 @@
 import json
 import pandas
 import numpy
-import Queue
+import queue
+from random import randint
 
-class User:
-    def __init__(self, user_id):
-        self.user_id = user_id
+class UserProfile:
+    def __init__(self, ):
+        self.queue = queue.Queue(maxsize=5)
+        self.user_info = dict()
 
-class UserProfiles:
-    user_list = dict()
-
-    def __init__(self):
-        self.queue = Queue.Queue(maxsize=5)
+    def addNewUser(self, priorities):
+        self.user_info['priority'] = priorities
         
+    def addUserRouteInfo(self, matrix, route_info):
+        self.user_info[matrix] = route_info
+
+    def getUserInfo(self):
+        return self.user_info
+    
+    def getUserQueue(self):
+        return self.queue
+    
     def putQueue(self, item):
         print(self.queue.qsize())
         if self.queue.full():
@@ -20,48 +28,89 @@ class UserProfiles:
             oldest_item = self.queue.get()
 
             #add oldest_item to route_info
-                
-            
 
         self.queue.put(item)
 
-    def addNewUser(self, user, priorities):
-        self.user_list[user] = {'priority': priorities}
-        
-    def addUserRouteInfo(self, user, route_info):
-        self.user_list[user]['route_info'] = route_info
-
-    def getUserPriorityList(self):
-        return self.user_list
-    
-    def getUserQueue(self):
-        return self.queue
-
 def main():
 
-    users = UserProfiles()
+    user_1234 = UserProfile()
+    
     priority_1234 = ['time consuming', 'bike lanes', 'elevation', 'trip length']
-    priority_1111 = ['bike lanes', 'time consuming', 'trip length', 'elevation']
     
-    users.addNewUser(1234, priority_1234)
-    users.addNewUser(1111, priority_1111)
+    user_1234.addNewUser(priority_1234)
     
-    users_list = users.getUserPriorityList()
+    # Initialize route info matrices
+    route_info_1234_elevation_weather = [[0 for i in range(3)] for j in range(7)]
+    user_1234.addUserRouteInfo('Elevation_Weather', route_info_1234_elevation_weather)
     
-    X = 12
-    Y = 26
+    route_info_1234_time_weather = [[0 for i in range(3)] for j in range(7)]
+    user_1234.addUserRouteInfo('Time_Weather', route_info_1234_time_weather)
     
-    route_info_1234 = numpy.random.rand(X, Y)
-    print(route_info_1234)
+    route_info_1234_time_temp = [[0 for i in range(3)] for j in range(5)]
+    user_1234.addUserRouteInfo('Time_Temperature', route_info_1234_time_temp)
+    
+    route_info_1234_elevation_traffic = [[0 for i in range(3)] for j in range(3)]
+    user_1234.addUserRouteInfo('Elevation_Traffic', route_info_1234_elevation_traffic)
+    
+    route_info_1234_bikelanes_traffic = [[0 for i in range(3)] for j in range(3)]
+    user_1234.addUserRouteInfo('BikeLanes_Traffic', route_info_1234_bikelanes_traffic)
+    
+    route_info_1234_time_timeofday = [[0 for i in range(3)] for j in range(4)]
+    user_1234.addUserRouteInfo('Time_TimeOfDay', route_info_1234_time_timeofday)
 
+    route_info_1234_time_weekday = [[0 for i in range(3)] for j in range(7)]
+    user_1234.addUserRouteInfo('Time_Weekday', route_info_1234_time_weekday)
     
+    user_1234_info = user_1234.getUserInfo()
+    
+    for x in range(1, 100):
+        
+        matrices = ['Elevation_Weather', 'Time_Weather', 'Time_Temperature', 'Elevation_Traffic', 'BikeLanes_Traffic', 'Time_TimeOfDay', 'Time_Weekday']
+        
+        x_index = 0
+        y_index = 0
+        
+        # X Axis variables
+        elevation_index = randint(0,2)
+        bikelanes_index = randint(0,2)
+        time_index = randint(0,2)
+        
+        # Y Axis variables
+        weather_index = randint(0,6)
+        temp_index = randint(0,4)
+        traffic_index = randint(0,2)
+        timeofday_index = randint(0,3)
+        weekday_index = randint(0,6)
+        
+        for matrix in matrices:
+            if 'Elevation' in matrix:
+                x_index = elevation_index
+            if 'BikeLanes' in matrix:
+                x_index = bikelanes_index
+            if 'Time_' in matrix:
+                x_index = time_index
+            if 'Weather' in matrix:
+                y_index = weather_index
+            if 'Temperature' in matrix:
+                y_index = temp_index
+            if 'Traffic' in matrix:
+                y_index = traffic_index
+            if 'TimeOfDay' in matrix:
+                y_index = timeofday_index
+            if 'Weekday' in matrix:
+                y_index = weekday_index
+
+            print(user_1234_info[matrix])
+            print(len(user_1234_info[matrix]))
+            print(matrix)
+            print(x_index)
+            print(y_index)
             
-    users.addUserRouteInfo(1234, route_info_1234)
-    
-    
-    # for item in latest_items_1234:
-        # users.putQueue(item)
-
+            print(user_1234_info[matrix][0][0])
+                
+            # user_1234_info.putQueue(
+                
+   
 
         
 if __name__ == "__main__":
