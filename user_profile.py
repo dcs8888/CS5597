@@ -5,31 +5,40 @@ import queue
 from random import randint
 
 class UserProfile:
-    def __init__(self, ):
-        self.queue = queue.Queue(maxsize=5)
-        self.user_info = dict()
+    def __init__(self):
+        self._queue = queue.Queue(maxsize=5)
+        self._user_info = dict()
 
     def addNewUser(self, priorities):
-        self.user_info['priority'] = priorities
+        self._user_info['priority'] = priorities
         
     def addUserRouteInfo(self, matrix, route_info):
-        self.user_info[matrix] = route_info
+        if matrix in self._user_info:
+            self._user_info[matrix] = self.getUserInfo()[matrix] + route_info
+        else:
+            self._user_info[matrix] = route_info
 
     def getUserInfo(self):
-        return self.user_info
+        return self._user_info
     
     def getUserQueue(self):
-        return self.queue
+        return self._queue
     
-    def putQueue(self, item):
-        print(self.queue.qsize())
-        if self.queue.full():
-            print("got here")
-            oldest_item = self.queue.get()
+    def putQueue(self, item, matrix):
+        print('Queue size ' + str(self._queue.qsize()))
+        
+        new_item = dict()
+        new_item[matrix] = item
 
-            #add oldest_item to route_info
+        if self._queue.full():
+            oldest_item = self._queue.get()
 
-        self.queue.put(item)
+            for key, value in oldest_item.items():
+                #add oldest_item to route_info
+                self.addUserRouteInfo(key, value)
+
+
+        self._queue.put(new_item)
 
 def main():
 
@@ -40,29 +49,27 @@ def main():
     user_1234.addNewUser(priority_1234)
     
     # Initialize route info matrices
-    route_info_1234_elevation_weather = [[0 for i in range(3)] for j in range(7)]
+    route_info_1234_elevation_weather = numpy.zeros([7,3], dtype=int)
     user_1234.addUserRouteInfo('Elevation_Weather', route_info_1234_elevation_weather)
     
-    route_info_1234_time_weather = [[0 for i in range(3)] for j in range(7)]
+    route_info_1234_time_weather = numpy.zeros([7,3], dtype=int)
     user_1234.addUserRouteInfo('Time_Weather', route_info_1234_time_weather)
     
-    route_info_1234_time_temp = [[0 for i in range(3)] for j in range(5)]
+    route_info_1234_time_temp = numpy.zeros([5,3], dtype=int)
     user_1234.addUserRouteInfo('Time_Temperature', route_info_1234_time_temp)
     
-    route_info_1234_elevation_traffic = [[0 for i in range(3)] for j in range(3)]
+    route_info_1234_elevation_traffic = numpy.zeros([3,3], dtype=int)
     user_1234.addUserRouteInfo('Elevation_Traffic', route_info_1234_elevation_traffic)
     
-    route_info_1234_bikelanes_traffic = [[0 for i in range(3)] for j in range(3)]
+    route_info_1234_bikelanes_traffic = numpy.zeros([3,3], dtype=int)
     user_1234.addUserRouteInfo('BikeLanes_Traffic', route_info_1234_bikelanes_traffic)
     
-    route_info_1234_time_timeofday = [[0 for i in range(3)] for j in range(4)]
+    route_info_1234_time_timeofday = numpy.zeros([4,3], dtype=int)
     user_1234.addUserRouteInfo('Time_TimeOfDay', route_info_1234_time_timeofday)
 
-    route_info_1234_time_weekday = [[0 for i in range(3)] for j in range(7)]
+    route_info_1234_time_weekday = numpy.zeros([7,3], dtype=int)
     user_1234.addUserRouteInfo('Time_Weekday', route_info_1234_time_weekday)
-    
-    user_1234_info = user_1234.getUserInfo()
-    
+
     for x in range(1, 100):
         
         matrices = ['Elevation_Weather', 'Time_Weather', 'Time_Temperature', 'Elevation_Traffic', 'BikeLanes_Traffic', 'Time_TimeOfDay', 'Time_Weekday']
@@ -99,21 +106,24 @@ def main():
                 y_index = timeofday_index
             if 'Weekday' in matrix:
                 y_index = weekday_index
-
-            print(matrix)
-            print(x_index)
-            print(y_index)
             
-            print(user_1234_info[matrix])
+            num_rows = len(user_1234.getUserInfo()[matrix])
+            num_cols = len(user_1234.getUserInfo()[matrix][0])
             
-            user_1234_info[matrix][y_index][x_index] = 1
+            print('Rows: ' + str(num_rows))
+            print('Cols: ' + str(num_cols))
             
-            print(user_1234_info[matrix])
-                
-            # user_1234_info.putQueue(
-                
-   
-
-        
+            recent_1234_info = numpy.zeros([num_rows, num_cols], dtype=int)
+            
+            print('Progressive User Info')
+            print(user_1234.getUserInfo())
+            print(user_1234.getUserInfo)
+            
+            recent_1234_info.fill(0)
+            
+            recent_1234_info[y_index][x_index] = 1
+  
+            user_1234.putQueue(recent_1234_info, matrix)
+ 
 if __name__ == "__main__":
    main()
