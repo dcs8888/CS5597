@@ -1,96 +1,69 @@
-Recent List
-[{'BikeLanes_Traffic': array([[0, 0, 0],
+
+
+Active User Recent List
+[{'BikeLanes_Traffic': array([[0, 0, 1],
        [0, 0, 0],
-       [0, 0, 1]]), 'Time_Temperature': array([[0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [1, 0, 0],
-       [0, 0, 0]]), 'Time_Weather': array([[1, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0]]), 'Time_Weekday': array([[1, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0]]), 'Time_TimeOfDay': array([[0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [1, 0, 0]]), 'Elevation_Traffic': array([[0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 1]]), 'Elevation_Weather': array([[0, 0, 1],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0]])}, {'BikeLanes_Traffic': array([[0, 0, 0],
-       [1, 0, 0],
        [0, 0, 0]]), 'Time_Temperature': array([[0, 0, 0],
-       [1, 0, 0],
+       [0, 1, 0],
        [0, 0, 0],
        [0, 0, 0],
-       [0, 0, 0]]), 'Time_Weather': array([[1, 0, 0],
+       [0, 0, 0]]), 'Time_Weather': array([[0, 0, 0],
        [0, 0, 0],
        [0, 0, 0],
-       [0, 0, 0],
+       [0, 1, 0],
        [0, 0, 0],
        [0, 0, 0],
        [0, 0, 0]]), 'Time_Weekday': array([[0, 0, 0],
        [0, 0, 0],
        [0, 0, 0],
+       [0, 1, 0],
        [0, 0, 0],
        [0, 0, 0],
+       [0, 0, 0]]), 'Time_TimeOfDay': array([[0, 1, 0],
        [0, 0, 0],
-       [1, 0, 0]]), 'Time_TimeOfDay': array([[0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0]]), 'Elevation_Traffic': array([[1, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0]]), 'Elevation_Weather': array([[0, 0, 0],
        [0, 0, 0],
        [0, 0, 0],
-       [1, 0, 0]]), 'Elevation_Traffic': array([[0, 0, 0],
        [1, 0, 0],
-       [0, 0, 0]]), 'Elevation_Weather': array([[1, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
        [0, 0, 0],
        [0, 0, 0],
        [0, 0, 0]])}, {'BikeLanes_Traffic': array([[0, 0, 0],
        [0, 0, 0],
-       [0, 1, 0]]), 'Time_Temperature': array([[0, 0, 1],
+       [1, 0, 0]]), 'Time_Temperature': array([[0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
+       [1, 0, 0],
+       [0, 0, 0]]), 'Time_Weather': array([[0, 0, 0],
        [0, 0, 0],
        [0, 0, 0],
        [0, 0, 0],
-       [0, 0, 0]]), 'Time_Weather': array([[0, 0, 1],
+       [0, 0, 0],
+       [0, 0, 0],
+       [1, 0, 0]]), 'Time_Weekday': array([[0, 0, 0],
        [0, 0, 0],
        [0, 0, 0],
        [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0]]), 'Time_Weekday': array([[0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 1],
+       [1, 0, 0],
        [0, 0, 0],
        [0, 0, 0]]), 'Time_TimeOfDay': array([[0, 0, 0],
        [0, 0, 0],
+       [0, 0, 0],
+       [1, 0, 0]]), 'Elevation_Traffic': array([[0, 0, 0],
+       [0, 0, 0],
+       [0, 1, 0]]), 'Elevation_Weather': array([[0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
+       [0, 1, 0]])}, {'BikeLanes_Traffic': array([[0, 0, 0],
        [0, 0, 1],
-       [0, 0, 0]]), 'Elevation_Traffic': array([[0, 0, 0],
+       [0, 0, 0]]), 'Time_Temperature': array([[0, 0, 0],
        [0, 0, 0],
-       [0, 0, 1]]), 'Elevation_Weather': array([[0, 0, 1],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0]])}, {'BikeLanes_Traffic': array([[0, 0, 0],
-       [0, 1, 0],
-       [0, 0, 0]]), 'Time_Temperature': array([[0, 0, 1],
-       [0, 0, 0],
-       [0, 0, 0],
+       [0, 0, 1],
        [0, 0, 0],
        [0, 0, 0]]), 'Time_Weather': array([[0, 0, 1],
        [0, 0, 0],
@@ -99,10 +72,10 @@ Recent List
        [0, 0, 0],
        [0, 0, 0],
        [0, 0, 0]]), 'Time_Weekday': array([[0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
        [0, 0, 1],
+       [0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
        [0, 0, 0],
        [0, 0, 0]]), 'Time_TimeOfDay': array([[0, 0, 0],
        [0, 0, 0],
@@ -115,66 +88,347 @@ Recent List
        [0, 0, 0],
        [0, 0, 0],
        [0, 0, 0],
-       [0, 0, 0]])}, {'BikeLanes_Traffic': array([[0, 0, 0],
-       [0, 1, 0],
+       [0, 0, 0]])}, {'BikeLanes_Traffic': array([[0, 0, 1],
+       [0, 0, 0],
        [0, 0, 0]]), 'Time_Temperature': array([[1, 0, 0],
        [0, 0, 0],
        [0, 0, 0],
        [0, 0, 0],
        [0, 0, 0]]), 'Time_Weather': array([[0, 0, 0],
        [0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
        [1, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
        [0, 0, 0],
        [0, 0, 0]]), 'Time_Weekday': array([[0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
+       [1, 0, 0]]), 'Time_TimeOfDay': array([[0, 0, 0],
+       [0, 0, 0],
        [1, 0, 0],
+       [0, 0, 0]]), 'Elevation_Traffic': array([[0, 1, 0],
        [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0]]), 'Time_TimeOfDay': array([[0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0],
-       [1, 0, 0]]), 'Elevation_Traffic': array([[0, 0, 0],
-       [1, 0, 0],
        [0, 0, 0]]), 'Elevation_Weather': array([[0, 0, 0],
        [0, 0, 0],
-       [1, 0, 0],
        [0, 0, 0],
        [0, 0, 0],
+       [0, 1, 0],
+       [0, 0, 0],
+       [0, 0, 0]])}, {'BikeLanes_Traffic': array([[0, 0, 1],
+       [0, 0, 0],
+       [0, 0, 0]]), 'Time_Temperature': array([[0, 0, 0],
+       [0, 0, 1],
+       [0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0]]), 'Time_Weather': array([[0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 1],
+       [0, 0, 0],
+       [0, 0, 0]]), 'Time_Weekday': array([[0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 1]]), 'Time_TimeOfDay': array([[0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 1]]), 'Elevation_Traffic': array([[0, 1, 0],
+       [0, 0, 0],
+       [0, 0, 0]]), 'Elevation_Weather': array([[0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0],
+       [0, 1, 0],
        [0, 0, 0],
        [0, 0, 0]])}]
-Historical Data
-{'BikeLanes_Traffic': array([[17,  4, 17],
-       [ 5, 10,  8],
-       [ 9, 13, 11]]), 'Time_Temperature': array([[13,  7,  7],
-       [ 5,  3,  6],
-       [ 4,  5,  6],
-       [ 7,  5,  7],
-       [ 9,  6,  4]]), 'Time_Weather': array([[5, 5, 2],
-       [6, 3, 3],
-       [6, 4, 5],
-       [4, 5, 5],
-       [3, 3, 3],
-       [6, 2, 3],
-       [8, 4, 9]]), 'priority': ['time consuming', 'bike lanes', 'elevation'], 'Time_Weekday': array([[2, 5, 4],
-       [8, 3, 8],
-       [7, 0, 5],
-       [6, 4, 1],
-       [4, 6, 3],
-       [4, 3, 2],
-       [7, 5, 7]]), 'Time_TimeOfDay': array([[ 9,  8,  9],
-       [ 9,  5,  4],
-       [10,  6,  9],
-       [10,  7,  8]]), 'Elevation_Traffic': array([[13, 12, 13],
-       [12,  7,  4],
-       [ 4, 10, 19]]), 'Elevation_Weather': array([[5, 3, 4],
-       [5, 5, 2],
-       [2, 7, 6],
-       [3, 5, 6],
-       [3, 0, 6],
-       [4, 1, 6],
-       [7, 8, 6]])}
-Priority
-['time consuming', 'bike lanes', 'elevation']
+Data
+BikeLanes_Traffic: [[0 0 1]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'BikeLanes_Traffic': ['traffic_high', 'bikelanes_low']}
+Data
+Time_Temperature: [[0 0 0]
+ [0 1 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Time_Temperature': ['', '']}
+Data
+Time_Weather: [[0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 1 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Time_Weather': ['', '']}
+Data
+Time_Weekday: [[0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 1 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Time_Weekday': ['', '']}
+Data
+Time_TimeOfDay: [[0 1 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Time_TimeOfDay': ['', '']}
+Data
+Elevation_Traffic: [[1 0 0]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Elevation_Traffic': ['', '']}
+Data
+Elevation_Weather: [[0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [1 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Elevation_Weather': ['', '']}
+Data
+BikeLanes_Traffic: [[0 0 0]
+ [0 0 0]
+ [1 0 0]]
+Result
+{'BikeLanes_Traffic': ['traffic_low', 'bikelanes_high']}
+Data
+Time_Temperature: [[0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [1 0 0]
+ [0 0 0]]
+Result
+{'Time_Temperature': ['', '']}
+Data
+Time_Weather: [[0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [1 0 0]]
+Result
+{'Time_Weather': ['', '']}
+Data
+Time_Weekday: [[0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [1 0 0]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Time_Weekday': ['', '']}
+Data
+Time_TimeOfDay: [[0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [1 0 0]]
+Result
+{'Time_TimeOfDay': ['', '']}
+Data
+Elevation_Traffic: [[0 0 0]
+ [0 0 0]
+ [0 1 0]]
+Result
+{'Elevation_Traffic': ['', '']}
+Data
+Elevation_Weather: [[0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 1 0]]
+Result
+{'Elevation_Weather': ['', '']}
+Data
+BikeLanes_Traffic: [[0 0 0]
+ [0 0 1]
+ [0 0 0]]
+Result
+{'BikeLanes_Traffic': ['traffic_medium', 'bikelanes_low']}
+Data
+Time_Temperature: [[0 0 0]
+ [0 0 0]
+ [0 0 1]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Time_Temperature': ['', '']}
+Data
+Time_Weather: [[0 0 1]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Time_Weather': ['', '']}
+Data
+Time_Weekday: [[0 0 0]
+ [0 0 1]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Time_Weekday': ['', '']}
+Data
+Time_TimeOfDay: [[0 0 0]
+ [0 0 0]
+ [0 0 1]
+ [0 0 0]]
+Result
+{'Time_TimeOfDay': ['', '']}
+Data
+Elevation_Traffic: [[0 0 0]
+ [0 1 0]
+ [0 0 0]]
+Result
+{'Elevation_Traffic': ['', '']}
+Data
+Elevation_Weather: [[0 1 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Elevation_Weather': ['', '']}
+Data
+BikeLanes_Traffic: [[0 0 1]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'BikeLanes_Traffic': ['traffic_high', 'bikelanes_low']}
+Data
+Time_Temperature: [[1 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Time_Temperature': ['', '']}
+Data
+Time_Weather: [[0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [1 0 0]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Time_Weather': ['', '']}
+Data
+Time_Weekday: [[0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [1 0 0]]
+Result
+{'Time_Weekday': ['', '']}
+Data
+Time_TimeOfDay: [[0 0 0]
+ [0 0 0]
+ [1 0 0]
+ [0 0 0]]
+Result
+{'Time_TimeOfDay': ['', '']}
+Data
+Elevation_Traffic: [[0 1 0]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Elevation_Traffic': ['', '']}
+Data
+Elevation_Weather: [[0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 1 0]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Elevation_Weather': ['', '']}
+Data
+BikeLanes_Traffic: [[0 0 1]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'BikeLanes_Traffic': ['traffic_high', 'bikelanes_low']}
+Data
+Time_Temperature: [[0 0 0]
+ [0 0 1]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Time_Temperature': ['', '']}
+Data
+Time_Weather: [[0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 1]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Time_Weather': ['', '']}
+Data
+Time_Weekday: [[0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 1]]
+Result
+{'Time_Weekday': ['', '']}
+Data
+Time_TimeOfDay: [[0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 1]]
+Result
+{'Time_TimeOfDay': ['', '']}
+Data
+Elevation_Traffic: [[0 1 0]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Elevation_Traffic': ['', '']}
+Data
+Elevation_Weather: [[0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 0 0]
+ [0 1 0]
+ [0 0 0]
+ [0 0 0]]
+Result
+{'Elevation_Weather': ['', '']}

@@ -4,7 +4,42 @@ import numpy
 import queue
 from random import randint
 
+NUM_ROUTES = 100
+
 class UserProfile:
+    high = 0
+    medium = 1
+    low = 2
+    quick = 0
+    average = 1
+    very = 2
+    short = 0
+    medium = 1
+    long = 2
+    clear = 0
+    cloudy = 1
+    rain = 2
+    storm = 3
+    snow = 4
+    fog = 5
+    windy = 6
+    cold = 0
+    cool = 1
+    mild = 2
+    warm = 3
+    hot = 4
+    morning = 0
+    afternoon = 1
+    evening = 2
+    night = 3
+    monday = 0
+    tuesday = 1
+    wednesday = 3
+    thursday = 4
+    friday = 5
+    saturday = 6
+    sunday = 7
+    
     def __init__(self):
         self._queue = queue.Queue(maxsize=5)
         self._user_info = dict()
@@ -18,7 +53,51 @@ class UserProfile:
             self._user_info[matrix] = self.getUserInfo()[matrix] + route_info
         else:
             self._user_info[matrix] = route_info
+            
+    def analyzeRecent(self):
+        user = self.getUserRecent()
 
+        print('\n\nActive User Recent List')
+        print(user)
+        
+        
+        # matrix set up [row][col]
+        # row independent variables - Weather, Temperature, Traffic, Time of Day, Weekday
+        # col dependent variables - Elevation, Bike Lanes, Time Consuming (time)
+        
+        # Analyze Recent data
+        for route_data in user:
+            for data in route_data:
+                print('Data')
+                print(str(data) + ': ' + str(route_data[data]))
+                
+                row, col = numpy.where(route_data[data] == 1)
+                result = self.decode_row_col(data, row[0], col[0])
+                
+                print('Result')
+                print(result)
+
+
+    def decode_row_col(self, matrix, row, col):
+        list = dict()
+        list[matrix] = ['','']
+        
+        if 'BikeLanes_Traffic' in matrix:
+            if row == self.high:
+                list[matrix][0] = 'traffic_high'
+            elif row == self.medium:
+                list[matrix][0] = 'traffic_medium'
+            elif row == self.low:
+                list[matrix][0] = 'traffic_low'
+            if col == self.high:
+                list[matrix][1] = 'bikelanes_high'
+            elif col == self.medium:
+                list[matrix][1] = 'bikelanes_medium'
+            elif col == self.low:
+                list[matrix][1] = 'bikelanes_low'
+
+        return list
+    
     def getUserInfo(self):
         return self._user_info
 
@@ -84,8 +163,7 @@ def main():
     route_info_active_time_weekday = numpy.zeros([7,3], dtype=int)
     user_active.addUserRouteInfo('Time_Weekday', route_info_active_time_weekday)
 
-    for x in range(1, 100):
-
+    for x in range(0, NUM_ROUTES):
         matrices = ['Elevation_Weather', 'Time_Weather', 'Time_Temperature', 'Elevation_Traffic', 'BikeLanes_Traffic', 'Time_TimeOfDay', 'Time_Weekday']
 
         x_index = 0
@@ -138,19 +216,9 @@ def main():
             recent_active_info[matrix] = recent_active_data
 
         user_active.putQueue(recent_active_info)
-
-    user_active_recent = user_active.getUserRecent()
-    user_active_history = user_active.getUserInfo()
-    user_active_priority = user_active.getUserPriority()
-
-    print('Recent List')
-    print(user_active_recent)
-
-    print('Historical Data')
-    print(user_active_history)
+        
+    user_active.analyzeRecent()
     
-    print('Priority')
-    print(user_active_priority)
 
 if __name__ == "__main__":
    main()
