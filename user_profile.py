@@ -24,6 +24,9 @@ class UserProfile:
 
     def getUserRecent(self):
         return self._recent
+        
+    def getUserPriority(self):
+        return self._user_info['priority']
 
     def putQueue(self, item):
         # print('Old Queue size ' + str(self._queue.qsize()))
@@ -50,33 +53,36 @@ class UserProfile:
 
 def main():
 
-    user_1234 = UserProfile()
+    user_active = UserProfile()
+    user_new = UserProfile()
 
-    priority_1234 = ['time consuming', 'bike lanes', 'elevation', 'trip length']
+    priority_active = ['time consuming', 'bike lanes', 'elevation']
+    priority_new = ['bike lanes', 'elevation', 'time consuming']
 
-    user_1234.addNewUser(priority_1234)
+    user_active.addNewUser(priority_active)
+    user_new.addNewUser(priority_new)
 
     # Initialize route info matrices
-    route_info_1234_elevation_weather = numpy.zeros([7,3], dtype=int)
-    user_1234.addUserRouteInfo('Elevation_Weather', route_info_1234_elevation_weather)
+    route_info_active_elevation_weather = numpy.zeros([7,3], dtype=int)
+    user_active.addUserRouteInfo('Elevation_Weather', route_info_active_elevation_weather)
 
-    route_info_1234_time_weather = numpy.zeros([7,3], dtype=int)
-    user_1234.addUserRouteInfo('Time_Weather', route_info_1234_time_weather)
+    route_info_active_time_weather = numpy.zeros([7,3], dtype=int)
+    user_active.addUserRouteInfo('Time_Weather', route_info_active_time_weather)
 
-    route_info_1234_time_temp = numpy.zeros([5,3], dtype=int)
-    user_1234.addUserRouteInfo('Time_Temperature', route_info_1234_time_temp)
+    route_info_active_time_temp = numpy.zeros([5,3], dtype=int)
+    user_active.addUserRouteInfo('Time_Temperature', route_info_active_time_temp)
 
-    route_info_1234_elevation_traffic = numpy.zeros([3,3], dtype=int)
-    user_1234.addUserRouteInfo('Elevation_Traffic', route_info_1234_elevation_traffic)
+    route_info_active_elevation_traffic = numpy.zeros([3,3], dtype=int)
+    user_active.addUserRouteInfo('Elevation_Traffic', route_info_active_elevation_traffic)
 
-    route_info_1234_bikelanes_traffic = numpy.zeros([3,3], dtype=int)
-    user_1234.addUserRouteInfo('BikeLanes_Traffic', route_info_1234_bikelanes_traffic)
+    route_info_active_bikelanes_traffic = numpy.zeros([3,3], dtype=int)
+    user_active.addUserRouteInfo('BikeLanes_Traffic', route_info_active_bikelanes_traffic)
 
-    route_info_1234_time_timeofday = numpy.zeros([4,3], dtype=int)
-    user_1234.addUserRouteInfo('Time_TimeOfDay', route_info_1234_time_timeofday)
+    route_info_active_time_timeofday = numpy.zeros([4,3], dtype=int)
+    user_active.addUserRouteInfo('Time_TimeOfDay', route_info_active_time_timeofday)
 
-    route_info_1234_time_weekday = numpy.zeros([7,3], dtype=int)
-    user_1234.addUserRouteInfo('Time_Weekday', route_info_1234_time_weekday)
+    route_info_active_time_weekday = numpy.zeros([7,3], dtype=int)
+    user_active.addUserRouteInfo('Time_Weekday', route_info_active_time_weekday)
 
     for x in range(1, 100):
 
@@ -97,19 +103,19 @@ def main():
         timeofday_index = randint(0,3)
         weekday_index = randint(0,6)
 
-        recent_1234_info = dict()
+        recent_active_info = dict()
         for matrix in matrices:
-            num_rows = len(user_1234.getUserInfo()[matrix])
-            num_cols = len(user_1234.getUserInfo()[matrix][0])
+            num_rows = len(user_active.getUserInfo()[matrix])
+            num_cols = len(user_active.getUserInfo()[matrix][0])
 
             # print('Rows: ' + str(num_rows))
             # print('Cols: ' + str(num_cols))
 
-            recent_1234_data = numpy.zeros([num_rows, num_cols], dtype=int)
+            recent_active_data = numpy.zeros([num_rows, num_cols], dtype=int)
 
             # print('Progressive User Info')
-            # print(user_1234.getUserInfo())
-            # print(user_1234.getUserInfo)
+            # print(user_active.getUserInfo())
+            # print(user_active.getUserInfo)
 
             if 'Elevation' in matrix:
                 x_index = elevation_index
@@ -128,19 +134,23 @@ def main():
             if 'Weekday' in matrix:
                 y_index = weekday_index
 
-            recent_1234_data[y_index][x_index] = 1
-            recent_1234_info[matrix] = recent_1234_data
+            recent_active_data[y_index][x_index] = 1
+            recent_active_info[matrix] = recent_active_data
 
-        user_1234.putQueue(recent_1234_info)
+        user_active.putQueue(recent_active_info)
 
-    user_1234_recent = user_1234.getUserRecent()
-    user_1234_history = user_1234.getUserInfo()
+    user_active_recent = user_active.getUserRecent()
+    user_active_history = user_active.getUserInfo()
+    user_active_priority = user_active.getUserPriority()
 
     print('Recent List')
-    print(user_1234_recent)
+    print(user_active_recent)
 
     print('Historical Data')
-    print(user_1234_history)
+    print(user_active_history)
+    
+    print('Priority')
+    print(user_active_priority)
 
 if __name__ == "__main__":
    main()
