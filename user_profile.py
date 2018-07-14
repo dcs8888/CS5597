@@ -7,6 +7,7 @@ from random import randint
 NUM_ROUTES = 100
 MULTI_PER_HIST = 0.01
 MULTIPLIER = 100.0
+MATRICES = ['Elevation_Weather', 'Time_Weather', 'Time_Temperature', 'Elevation_Traffic', 'BikeLanes_Traffic', 'Time_TimeOfDay', 'Time_Weekday']
 
 class UserProfile:
     high = 0
@@ -55,6 +56,11 @@ class UserProfile:
             self._user_info[matrix] = self.getUserInfo()[matrix] + route_info
         else:
             self._user_info[matrix] = route_info
+    
+    def analyzeHistory(self, final_dict):
+        user = self.getUserInfo()
+        
+        print(user)
             
     def analyzeRecent(self):
         user = self.getUserRecent()
@@ -264,7 +270,7 @@ def main():
     user_active.addNewUser(priority_active)
     user_new.addNewUser(priority_new)
 
-    # Initialize route info matrices
+    # Initialize route info MATRICES
     route_info_active_elevation_weather = numpy.zeros([7,3], dtype=int)
     user_active.addUserRouteInfo('Elevation_Weather', route_info_active_elevation_weather)
 
@@ -287,8 +293,6 @@ def main():
     user_active.addUserRouteInfo('Time_Weekday', route_info_active_time_weekday)
 
     for x in range(0, NUM_ROUTES):
-        matrices = ['Elevation_Weather', 'Time_Weather', 'Time_Temperature', 'Elevation_Traffic', 'BikeLanes_Traffic', 'Time_TimeOfDay', 'Time_Weekday']
-
         x_index = 0
         y_index = 0
 
@@ -305,7 +309,7 @@ def main():
         weekday_index = randint(0,6)
 
         recent_active_info = dict()
-        for matrix in matrices:
+        for matrix in MATRICES:
             num_rows = len(user_active.getUserInfo()[matrix])
             num_cols = len(user_active.getUserInfo()[matrix][0])
 
@@ -333,8 +337,10 @@ def main():
 
         user_active.putQueue(recent_active_info)
         
-    final_dict = user_active.analyzeRecent()
-    print(final_dict)
+    recent_dict = user_active.analyzeRecent()
+    print(recent_dict)
+    final_dict = user_active.analyzeHistory(recent_dict)
+    
 
 if __name__ == "__main__":
    main()
