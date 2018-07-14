@@ -57,6 +57,8 @@ class UserProfile:
     def analyzeRecent(self):
         user = self.getUserRecent()
         recent_dict = dict()
+        internal_dict = dict()
+        final_dict = dict()
 
         # matrix set up [row][col]
         # row independent variables - Weather, Temperature, Traffic, Time of Day, Weekday
@@ -93,8 +95,20 @@ class UserProfile:
         print(time_weather)
         print(time_weekday)
         
+        multiplier_percent = 0.0
+        multiplier = 100
         for route in bikelanes_traffic:
+            print(bikelanes_traffic.name)
             print(route)
+            
+            internal_dict[(multiplier - multiplier * multiplier_percent)] = [route[0] , route[1]]
+            
+            multiplier_percent += 0.200
+        final_dict[bikelanes_traffic.name] = internal_dict
+
+        print(internal_dict)
+            
+            
         
 
     def decode_row_col(self, matrix, row, col):
