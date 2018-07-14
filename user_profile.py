@@ -72,7 +72,30 @@ class UserProfile:
                 data_dict[data] = [row_new, col_new]
             recent_dict[recent_num] = data_dict
             recent_num += 1
-        return recent_dict
+
+        recent_pandas = pandas.DataFrame(recent_dict)
+        
+        print(recent_pandas)
+        
+        bikelanes_traffic = recent_pandas.loc[('BikeLanes_Traffic')]
+        elevation_traffic = recent_pandas.loc[('Elevation_Traffic')]
+        elevation_weather = recent_pandas.loc[('Elevation_Weather')]
+        time_temperature = recent_pandas.loc[('Time_Temperature')]
+        time_timeofday = recent_pandas.loc[('Time_TimeOfDay')]
+        time_weather = recent_pandas.loc[('Time_Weather')]
+        time_weekday = recent_pandas.loc[('Time_Weekday')]
+        
+        print(bikelanes_traffic)
+        print(elevation_traffic)
+        print(elevation_weather)
+        print(time_temperature)
+        print(time_timeofday)
+        print(time_weather)
+        print(time_weekday)
+        
+        for route in bikelanes_traffic:
+            print(route)
+        
 
     def decode_row_col(self, matrix, row, col):
         row_translate = ''
@@ -321,12 +344,7 @@ def main():
 
         user_active.putQueue(recent_active_info)
         
-    user_active_recent = user_active.analyzeRecent()
-    
-    user_active_recent_pandas = pandas.DataFrame(user_active_recent)
-    user_active_recent_pandas.to_json('recent.json')
-    
-    print(user_active_recent_pandas)
+    user_active.analyzeRecent()
 
 if __name__ == "__main__":
    main()
