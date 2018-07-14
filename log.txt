@@ -1,61 +1,80 @@
-                                                  1                                  2                                  3                                 4                                   5
-BikeLanes_Traffic    [traffic_high, bikelanes_high]   [traffic_medium, bikelanes_high]   [traffic_high, bikelanes_medium]  [traffic_high, bikelanes_medium]  [traffic_medium, bikelanes_medium]
-Elevation_Traffic  [traffic_high, elevation_medium]    [traffic_medium, elevation_low]   [traffic_high, elevation_medium]     [traffic_high, elevation_low]  [traffic_medium, elevation_medium]
-Elevation_Weather  [weather_rain, elevation_medium]      [weather_rain, elevation_low]  [weather_windy, elevation_medium]     [weather_snow, elevation_low]   [weather_clear, elevation_medium]
-Time_Temperature      [temperature_hot, time_quick]    [temperature_hot, time_average]   [temperature_cold, time_average]     [temperature_hot, time_quick]       [temperature_warm, time_very]
-Time_TimeOfDay      [timeofday_morning, time_quick]  [timeofday_morning, time_average]  [timeofday_evening, time_average]   [timeofday_morning, time_quick]    [timeofday_afternoon, time_very]
-Time_Weather             [weather_rain, time_quick]       [weather_rain, time_average]      [weather_windy, time_average]        [weather_snow, time_quick]          [weather_clear, time_very]
-Time_Weekday        [weekday_wednesday, time_quick]     [weekday_friday, time_average]     [weekday_sunday, time_average]    [weekday_thursday, time_quick]         [weekday_sunday, time_very]
-1        [traffic_high, bikelanes_high]
-2      [traffic_medium, bikelanes_high]
-3      [traffic_high, bikelanes_medium]
-4      [traffic_high, bikelanes_medium]
-5    [traffic_medium, bikelanes_medium]
-Name: BikeLanes_Traffic, dtype: object
-1      [traffic_high, elevation_medium]
-2       [traffic_medium, elevation_low]
-3      [traffic_high, elevation_medium]
-4         [traffic_high, elevation_low]
-5    [traffic_medium, elevation_medium]
-Name: Elevation_Traffic, dtype: object
-1     [weather_rain, elevation_medium]
-2        [weather_rain, elevation_low]
-3    [weather_windy, elevation_medium]
-4        [weather_snow, elevation_low]
-5    [weather_clear, elevation_medium]
-Name: Elevation_Weather, dtype: object
-1       [temperature_hot, time_quick]
-2     [temperature_hot, time_average]
-3    [temperature_cold, time_average]
-4       [temperature_hot, time_quick]
-5       [temperature_warm, time_very]
-Name: Time_Temperature, dtype: object
-1      [timeofday_morning, time_quick]
-2    [timeofday_morning, time_average]
-3    [timeofday_evening, time_average]
-4      [timeofday_morning, time_quick]
-5     [timeofday_afternoon, time_very]
-Name: Time_TimeOfDay, dtype: object
-1       [weather_rain, time_quick]
-2     [weather_rain, time_average]
-3    [weather_windy, time_average]
-4       [weather_snow, time_quick]
-5       [weather_clear, time_very]
-Name: Time_Weather, dtype: object
-1    [weekday_wednesday, time_quick]
-2     [weekday_friday, time_average]
-3     [weekday_sunday, time_average]
-4     [weekday_thursday, time_quick]
-5        [weekday_sunday, time_very]
-Name: Time_Weekday, dtype: object
-BikeLanes_Traffic
-['traffic_high', 'bikelanes_high']
-BikeLanes_Traffic
-['traffic_medium', 'bikelanes_high']
-BikeLanes_Traffic
-['traffic_high', 'bikelanes_medium']
-BikeLanes_Traffic
-['traffic_high', 'bikelanes_medium']
-BikeLanes_Traffic
-['traffic_medium', 'bikelanes_medium']
-{100.0: ['traffic_high', 'bikelanes_high'], 80.0: ['traffic_medium', 'bikelanes_high'], 60.0: ['traffic_high', 'bikelanes_medium'], 39.99999999999999: ['traffic_high', 'bikelanes_medium'], 20.0: ['traffic_medium', 'bikelanes_medium']}
+{
+	'BikeLanes_Traffic': {
+		('traffic_high',
+		'bikelanes_medium'): 100.0,
+		('traffic_medium',
+		'bikelanes_medium'): 140.0,
+		('traffic_low',
+		'bikelanes_high'): 39.99999999999999,
+		('traffic_medium',
+		'bikelanes_high'): 20.0
+	},
+	'Elevation_Traffic': {
+		('traffic_high',
+		'elevation_high'): 100.0,
+		('traffic_medium',
+		'elevation_high'): 80.0,
+		('traffic_medium',
+		'elevation_low'): 80.0,
+		('traffic_low',
+		'elevation_medium'): 39.99999999999999
+	},
+	'Elevation_Weather': {
+		('weather_snow',
+		'elevation_high'): 100.0,
+		('weather_fog',
+		'elevation_high'): 80.0,
+		('weather_storm',
+		'elevation_low'): 60.0,
+		('weather_snow',
+		'elevation_medium'): 39.99999999999999,
+		('weather_cloudy',
+		'elevation_low'): 20.0
+	},
+	'Time_Temperature': {
+		('temperature_hot',
+		'time_very'): 100.0,
+		('temperature_warm',
+		'time_quick'): 80.0,
+		('temperature_warm',
+		'time_very'): 60.0,
+		('temperature_warm',
+		'time_average'): 39.99999999999999,
+		('temperature_cold',
+		'time_average'): 20.0
+	},
+	'Time_TimeOfDay': {
+		('timeofday_evening',
+		'time_very'): 160.0,
+		('timeofday_evening',
+		'time_quick'): 80.0,
+		('timeofday_afternoon',
+		'time_average'): 39.99999999999999,
+		('timeofday_morning',
+		'time_average'): 20.0
+	},
+	'Time_Weather': {
+		('weather_snow',
+		'time_very'): 100.0,
+		('weather_fog',
+		'time_quick'): 80.0,
+		('weather_storm',
+		'time_very'): 60.0,
+		('weather_snow',
+		'time_average'): 39.99999999999999,
+		('weather_cloudy',
+		'time_average'): 20.0
+	},
+	'Time_Weekday': {
+		('weekday_friday',
+		'time_very'): 100.0,
+		('weekday_thursday',
+		'time_quick'): 80.0,
+		('weekday_tuesday',
+		'time_very'): 60.0,
+		('weekday_saturday',
+		'time_average'): 39.99999999999999,
+		('weekday_sunday',
+		'time_average'): 20.0
+	}
+}

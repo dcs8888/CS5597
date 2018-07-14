@@ -5,6 +5,8 @@ import queue
 from random import randint
 
 NUM_ROUTES = 100
+MULTI_PER_HIST = 0.01
+MULTIPLIER = 100.0
 
 class UserProfile:
     high = 0
@@ -57,14 +59,12 @@ class UserProfile:
     def analyzeRecent(self):
         user = self.getUserRecent()
         recent_dict = dict()
-        internal_dict = dict()
         final_dict = dict()
-
+        
+        # Analyze Recent data
         # matrix set up [row][col]
         # row independent variables - Weather, Temperature, Traffic, Time of Day, Weekday
         # col dependent variables - Elevation, Bike Lanes, Time Consuming (time)
-        
-        # Analyze Recent data
         recent_num = 1
         for route_data in user:
             data_dict = dict()
@@ -77,8 +77,6 @@ class UserProfile:
 
         recent_pandas = pandas.DataFrame(recent_dict)
         
-        print(recent_pandas)
-        
         bikelanes_traffic = recent_pandas.loc[('BikeLanes_Traffic')]
         elevation_traffic = recent_pandas.loc[('Elevation_Traffic')]
         elevation_weather = recent_pandas.loc[('Elevation_Weather')]
@@ -87,29 +85,21 @@ class UserProfile:
         time_weather = recent_pandas.loc[('Time_Weather')]
         time_weekday = recent_pandas.loc[('Time_Weekday')]
         
-        print(bikelanes_traffic)
-        print(elevation_traffic)
-        print(elevation_weather)
-        print(time_temperature)
-        print(time_timeofday)
-        print(time_weather)
-        print(time_weekday)
-        
-        multiplier_percent = 0.0
-        multiplier = 100
-        for route in bikelanes_traffic:
-            print(bikelanes_traffic.name)
-            print(route)
-            
-            internal_dict[(multiplier - multiplier * multiplier_percent)] = [route[0] , route[1]]
-            
-            multiplier_percent += 0.200
-        final_dict[bikelanes_traffic.name] = internal_dict
+        list = [bikelanes_traffic, elevation_traffic, elevation_weather,
+                time_temperature, time_timeofday, time_weather, time_weekday]
 
-        print(internal_dict)
-            
-            
-        
+        for topic in list:
+            internal_dict = dict()
+            multiplier_percent = 0
+            for route in topic:
+                val = (MULTIPLIER - (MULTIPLIER * multiplier_percent))
+                if (route[0] , route[1]) in internal_dict:
+                    internal_dict[route[0] , route[1]] = internal_dict[route[0] , route[1]] + val
+                else:
+                    internal_dict[route[0] , route[1]] = val
+                multiplier_percent += 0.20
+            final_dict[topic.name] = internal_dict
+        return final_dict
 
     def decode_row_col(self, matrix, row, col):
         row_translate = ''
@@ -249,18 +239,12 @@ class UserProfile:
         return self._user_info['priority']
 
     def putQueue(self, item):
-        # print('Old Queue size ' + str(self._queue.qsize()))
-
         if self._queue.full():
             oldest_item = self._queue.get()
-
             for key, value in oldest_item.items():
-
                 #add oldest_item to route_info
                 self.addUserRouteInfo(key, value)
         self._queue.put(item)
-
-        # print('New Queue size ' + str(self._queue.qsize()))
 
         # Reset recent list
         self._recent = []
@@ -268,8 +252,6 @@ class UserProfile:
         # Store recent trips
         for recent in list(self._queue.queue):
             self._recent.append(recent)
-        # print('Recent List')
-        # print(self._recent)
 
 def main():
 
@@ -327,14 +309,7 @@ def main():
             num_rows = len(user_active.getUserInfo()[matrix])
             num_cols = len(user_active.getUserInfo()[matrix][0])
 
-            # print('Rows: ' + str(num_rows))
-            # print('Cols: ' + str(num_cols))
-
             recent_active_data = numpy.zeros([num_rows, num_cols], dtype=int)
-
-            # print('Progressive User Info')
-            # print(user_active.getUserInfo())
-            # print(user_active.getUserInfo)
 
             if 'Elevation' in matrix:
                 x_index = elevation_index
@@ -358,7 +333,8 @@ def main():
 
         user_active.putQueue(recent_active_info)
         
-    user_active.analyzeRecent()
+    final_dict = user_active.analyzeRecent()
+    print(final_dict)
 
 if __name__ == "__main__":
    main()
