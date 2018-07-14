@@ -34,11 +34,11 @@ class UserProfile:
     night = 3
     monday = 0
     tuesday = 1
-    wednesday = 3
-    thursday = 4
-    friday = 5
-    saturday = 6
-    sunday = 7
+    wednesday = 2
+    thursday = 3
+    friday = 4
+    saturday = 5
+    sunday = 6
     
     def __init__(self):
         self._queue = queue.Queue(maxsize=5)
@@ -56,47 +56,151 @@ class UserProfile:
             
     def analyzeRecent(self):
         user = self.getUserRecent()
+        recent_dict = dict()
 
-        print('\n\nActive User Recent List')
-        print(user)
-        
-        
         # matrix set up [row][col]
         # row independent variables - Weather, Temperature, Traffic, Time of Day, Weekday
         # col dependent variables - Elevation, Bike Lanes, Time Consuming (time)
         
         # Analyze Recent data
+        recent_num = 1
         for route_data in user:
+            data_dict = dict()
             for data in route_data:
-                print('Data')
-                print(str(data) + ': ' + str(route_data[data]))
-                
                 row, col = numpy.where(route_data[data] == 1)
-                result = self.decode_row_col(data, row[0], col[0])
-                
-                print('Result')
-                print(result)
-
+                row_new, col_new = self.decode_row_col(data, row[0], col[0])
+                data_dict[data] = [row_new, col_new]
+            recent_dict[recent_num] = data_dict
+            recent_num += 1
+        return recent_dict
 
     def decode_row_col(self, matrix, row, col):
-        list = dict()
-        list[matrix] = ['','']
+        row_translate = ''
+        col_translate = ''
         
         if 'BikeLanes_Traffic' in matrix:
             if row == self.high:
-                list[matrix][0] = 'traffic_high'
+                row_translate = 'traffic_high'
             elif row == self.medium:
-                list[matrix][0] = 'traffic_medium'
+                row_translate = 'traffic_medium'
             elif row == self.low:
-                list[matrix][0] = 'traffic_low'
+                row_translate = 'traffic_low'
             if col == self.high:
-                list[matrix][1] = 'bikelanes_high'
+                col_translate = 'bikelanes_high'
             elif col == self.medium:
-                list[matrix][1] = 'bikelanes_medium'
+                col_translate = 'bikelanes_medium'
             elif col == self.low:
-                list[matrix][1] = 'bikelanes_low'
+                col_translate = 'bikelanes_low'
+        elif 'Time_Temperature' in matrix:
+            if row == self.cold:
+                row_translate = 'temperature_cold'
+            elif row == self.cool:
+                row_translate = 'temperature_cool'
+            elif row == self.mild:
+                row_translate = 'temperature_mild'
+            elif row == self.warm:
+                row_translate = 'temperature_warm'
+            elif row == self.hot:
+                row_translate = 'temperature_hot'
+            if col == self.quick:
+                col_translate = 'time_quick'
+            elif col == self.average:
+                col_translate = 'time_average'
+            elif col == self.very:
+                col_translate = 'time_very'
+        elif 'Time_Weather' in matrix:
+            if row == self.clear:
+                row_translate = 'weather_clear'
+            elif row == self.cloudy:
+                row_translate = 'weather_cloudy'
+            elif row == self.rain:
+                row_translate = 'weather_rain'
+            elif row == self.storm:
+                row_translate = 'weather_storm'
+            elif row == self.snow:
+                row_translate = 'weather_snow'
+            elif row == self.fog:
+                row_translate = 'weather_fog'
+            elif row == self.windy:
+                row_translate = 'weather_windy'
+            if col == self.quick:
+                col_translate = 'time_quick'
+            elif col == self.average:
+                col_translate = 'time_average'
+            elif col == self.very:
+                col_translate = 'time_very'
+        elif 'Time_Weekday' in matrix:
+            if row == self.monday:
+                row_translate = 'weekday_monday'
+            elif row == self.tuesday:
+                row_translate = 'weekday_tuesday'
+            elif row == self.wednesday:
+                row_translate = 'weekday_wednesday'
+            elif row == self.thursday:
+                row_translate = 'weekday_thursday'
+            elif row == self.friday:
+                row_translate = 'weekday_friday'
+            elif row == self.saturday:
+                row_translate = 'weekday_saturday'
+            elif row == self.sunday:
+                row_translate = 'weekday_sunday'
+            if col == self.quick:
+                col_translate = 'time_quick'
+            elif col == self.average:
+                col_translate = 'time_average'
+            elif col == self.very:
+                col_translate = 'time_very'
+        elif 'Time_TimeOfDay' in matrix:
+            if row == self.morning:
+                row_translate = 'timeofday_morning'
+            elif row == self.afternoon:
+                row_translate = 'timeofday_afternoon'
+            elif row == self.evening:
+                row_translate = 'timeofday_evening'
+            elif row == self.night:
+                row_translate = 'timeofday_night'
+            if col == self.quick:
+                col_translate = 'time_quick'
+            elif col == self.average:
+                col_translate = 'time_average'
+            elif col == self.very:
+                col_translate = 'time_very'
+        elif 'Elevation_Traffic' in matrix:
+            if row == self.high:
+                row_translate = 'traffic_high'
+            elif row == self.medium:
+                row_translate = 'traffic_medium'
+            elif row == self.low:
+                row_translate = 'traffic_low'
+            if col == self.high:
+                col_translate = 'elevation_high'
+            elif col == self.medium:
+                col_translate = 'elevation_medium'
+            elif col == self.low:
+                col_translate = 'elevation_low'
+        elif 'Elevation_Weather' in matrix:
+            if row == self.clear:
+                row_translate = 'weather_clear'
+            elif row == self.cloudy:
+                row_translate = 'weather_cloudy'
+            elif row == self.rain:
+                row_translate = 'weather_rain'
+            elif row == self.storm:
+                row_translate = 'weather_storm'
+            elif row == self.snow:
+                row_translate = 'weather_snow'
+            elif row == self.fog:
+                row_translate = 'weather_fog'
+            elif row == self.windy:
+                row_translate = 'weather_windy'
+            if col == self.high:
+                col_translate = 'elevation_high'
+            elif col == self.medium:
+                col_translate = 'elevation_medium'
+            elif col == self.low:
+                col_translate = 'elevation_low'
 
-        return list
+        return row_translate, col_translate
     
     def getUserInfo(self):
         return self._user_info
@@ -217,8 +321,12 @@ def main():
 
         user_active.putQueue(recent_active_info)
         
-    user_active.analyzeRecent()
+    user_active_recent = user_active.analyzeRecent()
     
+    user_active_recent_pandas = pandas.DataFrame(user_active_recent)
+    user_active_recent_pandas.to_json('recent.json')
+    
+    print(user_active_recent_pandas)
 
 if __name__ == "__main__":
    main()
