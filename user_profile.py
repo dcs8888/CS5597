@@ -43,11 +43,12 @@ class UserProfile:
     saturday = 5
     sunday = 6
     
-    def __init__(self):
+    def __init__(self, user_name):
         self._queue = queue.Queue(maxsize=5)
         self._history = dict()
         self._recent = []
         self._priority = dict()
+        self._user_name = user_name
 
     def addNewUser(self, priorities):
         self._priority['priority'] = priorities
@@ -261,8 +262,20 @@ class UserProfile:
     def getUserRecent(self):
         return self._recent
         
+    def getUserPreferences(self):
+        print(self._user_name)
+        if self.is_new_user():
+            print(self.getUserPriority())
+        else:
+            final = self.analyzeHistory(self.analyzeRecent())
+            print(final)
+        
     def getUserPriority(self):
         return self._priority['priority']
+        
+    def is_new_user(self):
+        if self.getUserRecent() == []:
+            return True
 
     def putQueue(self, item):
         if self._queue.full():
@@ -281,11 +294,23 @@ class UserProfile:
 
 def main():
 
-    user_active = UserProfile()
-    user_new = UserProfile()
+    user_active = UserProfile('Cycle_Forever')
+    user_new = UserProfile('NewUserTrial')
 
-    priority_active = ['time consuming', 'bike lanes', 'elevation']
-    priority_new = ['bike lanes', 'elevation', 'time consuming']
+    priority_active = {'Elevation_Weather': ['weather_clear', 'elevation_low'],
+                        'Time_Weather': ['weather_clear', 'time_quick'],
+                        'Time_Temperature': ['temperature_warm', 'time_quick'],
+                        'Elevation_Traffic': ['traffic_low', 'elevation_low'],
+                        'BikeLanes_Traffic': ['traffic_low','bikelanes_high'],
+                        'Time_TimeOfDay': ['timeofday_morning','time_average'],
+                        'Time_Weekday': ['weekday_friday','time_quick']}
+    priority_new = {'Elevation_Weather': ['weather_clear', 'elevation_low'],
+                        'Time_Weather': ['weather_clear', 'time_quick'],
+                        'Time_Temperature': ['temperature_cool', 'time_quick'],
+                        'Elevation_Traffic': ['traffic_low', 'elevation_low'],
+                        'BikeLanes_Traffic': ['traffic_low','bikelanes_high'],
+                        'Time_TimeOfDay': ['timeofday_afternoon','time_quick'],
+                        'Time_Weekday': ['weekday_saturday','time_quick']}
 
     user_active.addNewUser(priority_active)
     user_new.addNewUser(priority_new)
@@ -356,13 +381,9 @@ def main():
             recent_active_info[matrix] = recent_active_data
 
         user_active.putQueue(recent_active_info)
-        
-    recent_dict = user_active.analyzeRecent()
-    print('Recent')
-    print(recent_dict)
-    final_dict = user_active.analyzeHistory(recent_dict)
-    print('Final')
-    print(final_dict)
+
+    user_active.getUserPreferences()
+    user_new.getUserPreferences()
     
 
 if __name__ == "__main__":
