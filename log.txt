@@ -1,31 +1,44 @@
-{'BikeLanes_Traffic': {('traffic_high', 'bikelanes_medium'): 220.0, ('traffic_low', 'bikelanes_high'): 80.0}, 'Elevation_Traffic': {('traffic_high', 'elevation_medium'): 100.0, ('traffic_low', 'elevation_medium'): 80.0, ('traffic_high', 'elevation_low'): 80.0, ('traffic_high', 'elevation_high'): 39.99999999999999}, 'Elevation_Weather': {('weather_cloudy', 'elevation_medium'): 180.0, ('weather_snow', 'elevation_low'): 80.0, ('weather_snow', 'elevation_high'): 39.99999999999999}, 'Time_Temperature': {('temperature_warm', 'time_quick'): 160.0, ('temperature_warm', 'time_average'): 80.0, ('temperature_cool', 'time_quick'): 39.99999999999999, ('temperature_cold', 'time_quick'): 20.0}, 'Time_TimeOfDay': {('timeofday_morning', 'time_quick'): 100.0, ('timeofday_evening', 'time_average'): 80.0, ('timeofday_night', 'time_quick'): 60.0, ('timeofday_afternoon', 'time_quick'): 59.99999999999999}, 'Time_Weather': {('weather_cloudy', 'time_quick'): 100.0, ('weather_cloudy', 'time_average'): 80.0, ('weather_snow', 'time_quick'): 120.0}, 'Time_Weekday': {('weekday_monday', 'time_quick'): 100.0, ('weekday_saturday', 'time_average'): 80.0, ('weekday_friday', 'time_quick'): 60.0, ('weekday_sunday', 'time_quick'): 39.99999999999999, ('weekday_tuesday', 'time_quick'): 20.0}}
-{'priority': ['time consuming', 'bike lanes', 'elevation'], 'Elevation_Weather': array([[4, 4, 5],
-       [5, 6, 8],
-       [2, 2, 4],
-       [6, 7, 5],
-       [3, 1, 3],
-       [4, 5, 6],
-       [5, 3, 7]]), 'Time_Weather': array([[7, 3, 3],
-       [9, 5, 5],
-       [5, 1, 2],
-       [6, 4, 8],
-       [0, 4, 3],
-       [2, 6, 7],
-       [3, 7, 5]]), 'Time_Temperature': array([[ 9,  7,  7],
-       [ 6,  9,  8],
-       [ 5,  8,  5],
-       [11,  5,  6],
-       [ 1,  1,  7]]), 'Elevation_Traffic': array([[10,  8, 15],
-       [11, 13, 11],
-       [ 8,  7, 12]]), 'BikeLanes_Traffic': array([[12,  9, 12],
-       [11, 10, 14],
-       [ 6, 11, 10]]), 'Time_TimeOfDay': array([[ 7,  8,  8],
-       [11, 12,  5],
-       [ 8,  4,  3],
-       [ 6,  6, 17]]), 'Time_Weekday': array([[ 7,  3,  3],
-       [ 4,  5,  5],
-       [ 2,  6,  3],
-       [ 2,  4,  3],
-       [ 3,  4, 10],
-       [ 5,  3,  7],
-       [ 9,  5,  2]])}
+{'BikeLanes_Traffic': {('traffic_high', 'bikelanes_high'): 100.0, ('traffic_low', 'bikelanes_high'): 80.0, ('traffic_low', 'bikelanes_medium'): 60.0, ('traffic_high', 'bikelanes_medium'): 39.99999999999999, ('traffic_medium', 'bikelanes_low'): 20.0}, 'Elevation_Traffic': {('traffic_high', 'elevation_low'): 140.0, ('traffic_low', 'elevation_high'): 140.0, ('traffic_medium', 'elevation_medium'): 20.0}, 'Elevation_Weather': {('weather_clear', 'elevation_low'): 100.0, ('weather_rain', 'elevation_high'): 80.0, ('weather_clear', 'elevation_high'): 60.0, ('weather_cloudy', 'elevation_low'): 39.99999999999999, ('weather_rain', 'elevation_medium'): 20.0}, 'Time_Temperature': {('temperature_warm', 'time_quick'): 140.0, ('temperature_warm', 'time_average'): 80.0, ('temperature_cool', 'time_average'): 60.0, ('temperature_mild', 'time_quick'): 20.0}, 'Time_TimeOfDay': {('timeofday_night', 'time_quick'): 100.0, ('timeofday_evening', 'time_average'): 140.0, ('timeofday_afternoon', 'time_quick'): 59.99999999999999}, 'Time_Weather': {('weather_clear', 'time_quick'): 100.0, ('weather_rain', 'time_average'): 80.0, ('weather_clear', 'time_average'): 60.0, ('weather_cloudy', 'time_quick'): 39.99999999999999, ('weather_rain', 'time_quick'): 20.0}, 'Time_Weekday': {('weekday_sunday', 'time_quick'): 100.0, ('weekday_monday', 'time_average'): 80.0, ('weekday_friday', 'time_average'): 60.0, ('weekday_thursday', 'time_quick'): 59.99999999999999}}
+Elevation_Weather
+[[2 2 6]
+ [3 5 5]
+ [3 9 4]
+ [3 6 0]
+ [3 5 6]
+ [6 4 8]
+ [2 7 6]]
+Time_Weather
+[[4 4 2]
+ [5 4 4]
+ [6 6 4]
+ [1 6 2]
+ [9 2 3]
+ [6 5 7]
+ [8 3 4]]
+Time_Temperature
+[[ 6  2  6]
+ [11 10  4]
+ [ 5  1  6]
+ [ 8 10  9]
+ [ 9  7  1]]
+Elevation_Traffic
+[[ 7 11 10]
+ [ 7 13 13]
+ [ 8 14 12]]
+BikeLanes_Traffic
+[[10  6 12]
+ [ 9 11 13]
+ [10 11 13]]
+Time_TimeOfDay
+[[ 9  8  4]
+ [10  9  5]
+ [12  7  8]
+ [ 8  6  9]]
+Time_Weekday
+[[4 5 9]
+ [8 5 3]
+ [5 3 3]
+ [7 4 2]
+ [3 7 2]
+ [5 4 4]
+ [7 2 3]]

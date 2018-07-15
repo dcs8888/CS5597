@@ -45,25 +45,43 @@ class UserProfile:
     
     def __init__(self):
         self._queue = queue.Queue(maxsize=5)
-        self._user_info = dict()
+        self._history = dict()
         self._recent = []
+        self._priority = dict()
 
     def addNewUser(self, priorities):
-        self._user_info['priority'] = priorities
+        self._priority['priority'] = priorities
 
     def addUserRouteInfo(self, matrix, route_info):
-        if matrix in self._user_info:
-            self._user_info[matrix] = self.getUserInfo()[matrix] + route_info
+        if matrix in self._history:
+            self._history[matrix] = self.getUserHistory()[matrix] + route_info
         else:
-            self._user_info[matrix] = route_info
+            self._history[matrix] = route_info
     
     def analyzeHistory(self, final_dict):
-        user = self.getUserInfo()
+        history = self.getUserHistory()
         
-        print(user)
+        for matrix in history.items():
+            print(matrix[0])
+            print(matrix[1])
+        
+        # for route_data in history:
+            # data_dict = dict()
+            # for data in route_data:
+                # max_row = len(value)
+                # print('MAX ROW ' + str(max_row))
+                # max_col = len(value[0])
+                # print('MAX COL ' + str(max_col))
+                # print(key)
+                # for row in range(0, max_row):
+                    # for col in range(0, max_col):
+                        # print('ROW ' + str(row) + ' COL ' + str(col))
+                        # new_row, new_col = self.decode_row_col(history, row, col)
+                        
+                        # print(str(new_row) + ' ' + str(new_col))
             
     def analyzeRecent(self):
-        user = self.getUserRecent()
+        recent = self.getUserRecent()
         recent_dict = dict()
         final_dict = dict()
         
@@ -72,7 +90,7 @@ class UserProfile:
         # row independent variables - Weather, Temperature, Traffic, Time of Day, Weekday
         # col dependent variables - Elevation, Bike Lanes, Time Consuming (time)
         recent_num = 1
-        for route_data in user:
+        for route_data in recent:
             data_dict = dict()
             for data in route_data:
                 row, col = numpy.where(route_data[data] == 1)
@@ -235,14 +253,14 @@ class UserProfile:
 
         return row_translate, col_translate
     
-    def getUserInfo(self):
-        return self._user_info
+    def getUserHistory(self):
+        return self._history
 
     def getUserRecent(self):
         return self._recent
         
     def getUserPriority(self):
-        return self._user_info['priority']
+        return self._priority['priority']
 
     def putQueue(self, item):
         if self._queue.full():
@@ -310,8 +328,8 @@ def main():
 
         recent_active_info = dict()
         for matrix in MATRICES:
-            num_rows = len(user_active.getUserInfo()[matrix])
-            num_cols = len(user_active.getUserInfo()[matrix][0])
+            num_rows = len(user_active.getUserHistory()[matrix])
+            num_cols = len(user_active.getUserHistory()[matrix][0])
 
             recent_active_data = numpy.zeros([num_rows, num_cols], dtype=int)
 
