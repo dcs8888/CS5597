@@ -5,7 +5,7 @@ import queue
 from random import randint
 
 NUM_ROUTES = 100
-MULTI_PER_HIST = 0.01
+MULTI_PER_HIST = 0.1
 MULTIPLIER = 100.0
 MATRICES = ['Elevation_Weather', 'Time_Weather', 'Time_Temperature', 'Elevation_Traffic', 'BikeLanes_Traffic', 'Time_TimeOfDay', 'Time_Weekday']
 
@@ -62,23 +62,25 @@ class UserProfile:
         history = self.getUserHistory()
         
         for matrix in history.items():
-            print(matrix[0])
-            print(matrix[1])
-        
-        # for route_data in history:
-            # data_dict = dict()
-            # for data in route_data:
-                # max_row = len(value)
-                # print('MAX ROW ' + str(max_row))
-                # max_col = len(value[0])
-                # print('MAX COL ' + str(max_col))
-                # print(key)
-                # for row in range(0, max_row):
-                    # for col in range(0, max_col):
-                        # print('ROW ' + str(row) + ' COL ' + str(col))
-                        # new_row, new_col = self.decode_row_col(history, row, col)
+            name = matrix[0]
+            array = matrix[1]
+            
+            for data in array:
+                max_row = len(array)
+                max_col = len(data)
+
+                for row in range(0, max_row):
+                    for col in range(0, max_col):
+                        new_row, new_col = self.decode_row_col(name, row, col)
+                        val = MULTI_PER_HIST * array[row][col]
+                        if name in final_dict:
+                            if (new_row , new_col) in final_dict[name]:
+                                final_dict[name][new_row , new_col] = final_dict[name][new_row , new_col] + val
+                            else:
+                                final_dict[name][new_row , new_col] = val
+        return final_dict
                         
-                        # print(str(new_row) + ' ' + str(new_col))
+                        
             
     def analyzeRecent(self):
         recent = self.getUserRecent()
@@ -356,8 +358,11 @@ def main():
         user_active.putQueue(recent_active_info)
         
     recent_dict = user_active.analyzeRecent()
+    print('Recent')
     print(recent_dict)
     final_dict = user_active.analyzeHistory(recent_dict)
+    print('Final')
+    print(final_dict)
     
 
 if __name__ == "__main__":
