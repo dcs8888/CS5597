@@ -1,3 +1,14 @@
+'''
+user_profile.py
+
+Simulate data for cycling.
+Send cycling data through a queue and pop off the oldest data
+set and send to historical data set.
+
+Analyze data for historical and recent cycling trips and print
+data in terms of weight based on trip types chosen.
+'''
+
 import json
 import pandas
 import numpy
@@ -51,15 +62,29 @@ class UserProfile:
         self._user_name = user_name
 
     def addNewUser(self, priorities):
+        '''
+        Add new user and set the initial priorities
+        @param priorities - Dictionary of priorites
+        '''
         self._priority['priority'] = priorities
 
     def addUserRouteInfo(self, matrix, route_info):
+        '''
+        Add route data to the historical dataset
+        @param matrix - Name of the set of data to store the result selection
+        @param route_info - The data to be stored
+        '''
         if matrix in self._history:
             self._history[matrix] = self.getUserHistory()[matrix] + route_info
         else:
             self._history[matrix] = route_info
 
     def analyzeHistory(self, final_dict):
+        '''
+        Analyze the Historical data and add to final dictionary and calculate the new value
+        @param final_dict - The dictionary to update the values to after looking at the historical data
+        return final_dict - Return the updated dictionary
+        '''
         history = self.getUserHistory()
 
         for matrix in history.items():
@@ -73,7 +98,11 @@ class UserProfile:
                 for row in range(0, max_row):
                     for col in range(0, max_col):
                         new_row, new_col = self.decode_row_col(name, row, col)
-                        val = MULTI_PER_HIST * array[row][col]
+                        
+                        # Take the value in the data and multiply by a preset multiplier.
+                        # This multiplier is an estimate of the weight give to historical data
+                        # versus recent data.
+                        val = MULTI_PER_HIST * array[row][col] 
                         if name in final_dict:
                             if (new_row , new_col) in final_dict[name]:
                                 final_dict[name][new_row , new_col] = final_dict[name][new_row , new_col] + val
@@ -82,6 +111,11 @@ class UserProfile:
         return final_dict
 
     def analyzeRecent(self):
+        '''
+        Analyze the Recent data currently in the queue and store in recent_dict with the currently
+        multipler associated to recent data.
+        return final_dict - Return the updated dictionary
+        '''
         recent = self.getUserRecent()
         recent_dict = dict()
         final_dict = dict()
@@ -100,6 +134,11 @@ class UserProfile:
             recent_dict[recent_num] = data_dict
             recent_num += 1
 
+        # Use pandas to get data in a favoriable state.
+        # Data was organized by route number but needed data
+        # to be organized by coorelation type.
+        # Coorelation types: bikelanes_traffic, elevation_traffic, elevation_weather,
+        # time_temperature, time_timeofday, time_weather, time_weekday
         recent_pandas = pandas.DataFrame(recent_dict)
 
         bikelanes_traffic = recent_pandas.loc[('BikeLanes_Traffic')]
@@ -127,6 +166,13 @@ class UserProfile:
         return final_dict
 
     def decode_row_col(self, matrix, row, col):
+        '''
+        Take the name of the matrix and use this to assign new names to the proper row/col indexes
+        @param matrix - Name of the matrix
+        @param row - the index value of the row
+        @param col - the index value of the column
+        return row_translate, col_translate - Return the updated value of the row and column
+        '''
         row_translate = ''
         col_translate = ''
 
@@ -255,12 +301,23 @@ class UserProfile:
         return row_translate, col_translate
 
     def getUserHistory(self):
+        '''
+        Getter for Historical data
+        return _history - Return Historical Data
+        '''
         return self._history
 
     def getUserRecent(self):
+        '''
+        Getter for Recent data
+        return _recent - Return Recent Data
+        '''
         return self._recent
 
     def getUserPreferences(self):
+        '''
+        Print the final data rankings based on Initial Priority, Historical Data, and Recent Data
+        '''
         print(self._user_name)
         if self.is_new_user():
             print(self.getUserPriority())
@@ -269,13 +326,26 @@ class UserProfile:
             print(final)
 
     def getUserPriority(self):
+        '''
+        Getter for Priority data
+        return _priority - Return Priority Data
+        '''
         return self._priority['priority']
 
     def is_new_user(self):
+        '''
+        Check if user is a new user by checking recent data
+        Return True/False - If user doesn't have any recent data, False otherwise
+        '''
         if self.getUserRecent() == []:
             return True
+        return False
 
     def putQueue(self, item):
+        '''
+        Put the new data in the queue for the recent data
+        @param item - Data set to place in the queue
+        '''
         if self._queue.full():
             oldest_item = self._queue.get()
             for key, value in oldest_item.items():
@@ -290,51 +360,12 @@ class UserProfile:
         for recent in list(self._queue.queue):
             self._recent.append(recent)
 
-def main():
-
-    user_active = UserProfile('Cycle_Forever')
-    user_new = UserProfile('NewUserTrial')
-
-    priority_active = {'Elevation_Weather': ['weather_clear', 'elevation_low'],
-                        'Time_Weather': ['weather_clear', 'time_quick'],
-                        'Time_Temperature': ['temperature_warm', 'time_quick'],
-                        'Elevation_Traffic': ['traffic_low', 'elevation_low'],
-                        'BikeLanes_Traffic': ['traffic_low','bikelanes_high'],
-                        'Time_TimeOfDay': ['timeofday_morning','time_average'],
-                        'Time_Weekday': ['weekday_friday','time_quick']}
-    priority_new = {'Elevation_Weather': ['weather_clear', 'elevation_low'],
-                        'Time_Weather': ['weather_clear', 'time_quick'],
-                        'Time_Temperature': ['temperature_cool', 'time_quick'],
-                        'Elevation_Traffic': ['traffic_low', 'elevation_low'],
-                        'BikeLanes_Traffic': ['traffic_low','bikelanes_high'],
-                        'Time_TimeOfDay': ['timeofday_afternoon','time_quick'],
-                        'Time_Weekday': ['weekday_saturday','time_quick']}
-
-    user_active.addNewUser(priority_active)
-    user_new.addNewUser(priority_new)
-
-    # Initialize route info MATRICES
-    route_info_active_elevation_weather = numpy.zeros([7,3], dtype=int)
-    user_active.addUserRouteInfo('Elevation_Weather', route_info_active_elevation_weather)
-
-    route_info_active_time_weather = numpy.zeros([7,3], dtype=int)
-    user_active.addUserRouteInfo('Time_Weather', route_info_active_time_weather)
-
-    route_info_active_time_temp = numpy.zeros([5,3], dtype=int)
-    user_active.addUserRouteInfo('Time_Temperature', route_info_active_time_temp)
-
-    route_info_active_elevation_traffic = numpy.zeros([3,3], dtype=int)
-    user_active.addUserRouteInfo('Elevation_Traffic', route_info_active_elevation_traffic)
-
-    route_info_active_bikelanes_traffic = numpy.zeros([3,3], dtype=int)
-    user_active.addUserRouteInfo('BikeLanes_Traffic', route_info_active_bikelanes_traffic)
-
-    route_info_active_time_timeofday = numpy.zeros([4,3], dtype=int)
-    user_active.addUserRouteInfo('Time_TimeOfDay', route_info_active_time_timeofday)
-
-    route_info_active_time_weekday = numpy.zeros([7,3], dtype=int)
-    user_active.addUserRouteInfo('Time_Weekday', route_info_active_time_weekday)
-
+def simulate_data(user):
+    '''
+    Used to create random data to be used for Recent and Historical data
+    and send the data to the queue.
+    @param user - The user class object associated to a user.
+    '''
     for x in range(0, NUM_ROUTES):
         x_index = 0
         y_index = 0
@@ -353,8 +384,8 @@ def main():
 
         recent_active_info = dict()
         for matrix in MATRICES:
-            num_rows = len(user_active.getUserHistory()[matrix])
-            num_cols = len(user_active.getUserHistory()[matrix][0])
+            num_rows = len(user.getUserHistory()[matrix])
+            num_cols = len(user.getUserHistory()[matrix][0])
 
             recent_active_data = numpy.zeros([num_rows, num_cols], dtype=int)
 
@@ -377,9 +408,61 @@ def main():
 
             recent_active_data[y_index][x_index] = 1
             recent_active_info[matrix] = recent_active_data
+        user.putQueue(recent_active_info)
+            
+def main():
 
-        user_active.putQueue(recent_active_info)
+    # Initialize users.  Two users created. 
+    # One is an active user with both recent and historical data
+    # Next is a new user with only a list of priorities
 
+    user_active = UserProfile('Cycle_Forever')
+    user_new = UserProfile('NewUserTrial')
+    
+    priority_active = {'Elevation_Weather': ['weather_clear', 'elevation_low'],
+                        'Time_Weather': ['weather_clear', 'time_quick'],
+                        'Time_Temperature': ['temperature_warm', 'time_quick'],
+                        'Elevation_Traffic': ['traffic_low', 'elevation_low'],
+                        'BikeLanes_Traffic': ['traffic_low','bikelanes_high'],
+                        'Time_TimeOfDay': ['timeofday_morning','time_average'],
+                        'Time_Weekday': ['weekday_friday','time_quick']}
+    priority_new = {'Elevation_Weather': ['weather_clear', 'elevation_low'],
+                        'Time_Weather': ['weather_clear', 'time_quick'],
+                        'Time_Temperature': ['temperature_cool', 'time_quick'],
+                        'Elevation_Traffic': ['traffic_low', 'elevation_low'],
+                        'BikeLanes_Traffic': ['traffic_low','bikelanes_high'],
+                        'Time_TimeOfDay': ['timeofday_afternoon','time_quick'],
+                        'Time_Weekday': ['weekday_saturday','time_quick']}
+
+    user_active.addNewUser(priority_active)
+    user_new.addNewUser(priority_new)
+
+    # Initialize route info matrices
+    route_info_active_elevation_weather = numpy.zeros([7,3], dtype=int)
+    user_active.addUserRouteInfo('Elevation_Weather', route_info_active_elevation_weather)
+
+    route_info_active_time_weather = numpy.zeros([7,3], dtype=int)
+    user_active.addUserRouteInfo('Time_Weather', route_info_active_time_weather)
+
+    route_info_active_time_temp = numpy.zeros([5,3], dtype=int)
+    user_active.addUserRouteInfo('Time_Temperature', route_info_active_time_temp)
+
+    route_info_active_elevation_traffic = numpy.zeros([3,3], dtype=int)
+    user_active.addUserRouteInfo('Elevation_Traffic', route_info_active_elevation_traffic)
+
+    route_info_active_bikelanes_traffic = numpy.zeros([3,3], dtype=int)
+    user_active.addUserRouteInfo('BikeLanes_Traffic', route_info_active_bikelanes_traffic)
+
+    route_info_active_time_timeofday = numpy.zeros([4,3], dtype=int)
+    user_active.addUserRouteInfo('Time_TimeOfDay', route_info_active_time_timeofday)
+
+    route_info_active_time_weekday = numpy.zeros([7,3], dtype=int)
+    user_active.addUserRouteInfo('Time_Weekday', route_info_active_time_weekday)
+
+    # Start the data simulation
+    simulate_data(user_active)
+
+    # print user data
     user_active.getUserPreferences()
     user_new.getUserPreferences()
 
