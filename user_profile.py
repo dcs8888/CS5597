@@ -42,7 +42,7 @@ class UserProfile:
     friday = 4
     saturday = 5
     sunday = 6
-    
+
     def __init__(self, user_name):
         self._queue = queue.Queue(maxsize=5)
         self._history = dict()
@@ -58,14 +58,14 @@ class UserProfile:
             self._history[matrix] = self.getUserHistory()[matrix] + route_info
         else:
             self._history[matrix] = route_info
-    
+
     def analyzeHistory(self, final_dict):
         history = self.getUserHistory()
-        
+
         for matrix in history.items():
             name = matrix[0]
             array = matrix[1]
-            
+
             for data in array:
                 max_row = len(array)
                 max_col = len(data)
@@ -80,14 +80,12 @@ class UserProfile:
                             else:
                                 final_dict[name][new_row , new_col] = val
         return final_dict
-                        
-                        
-            
+
     def analyzeRecent(self):
         recent = self.getUserRecent()
         recent_dict = dict()
         final_dict = dict()
-        
+
         # Analyze Recent data
         # matrix set up [row][col]
         # row independent variables - Weather, Temperature, Traffic, Time of Day, Weekday
@@ -103,7 +101,7 @@ class UserProfile:
             recent_num += 1
 
         recent_pandas = pandas.DataFrame(recent_dict)
-        
+
         bikelanes_traffic = recent_pandas.loc[('BikeLanes_Traffic')]
         elevation_traffic = recent_pandas.loc[('Elevation_Traffic')]
         elevation_weather = recent_pandas.loc[('Elevation_Weather')]
@@ -111,7 +109,7 @@ class UserProfile:
         time_timeofday = recent_pandas.loc[('Time_TimeOfDay')]
         time_weather = recent_pandas.loc[('Time_Weather')]
         time_weekday = recent_pandas.loc[('Time_Weekday')]
-        
+
         list = [bikelanes_traffic, elevation_traffic, elevation_weather,
                 time_temperature, time_timeofday, time_weather, time_weekday]
 
@@ -131,7 +129,7 @@ class UserProfile:
     def decode_row_col(self, matrix, row, col):
         row_translate = ''
         col_translate = ''
-        
+
         if 'BikeLanes_Traffic' in matrix:
             if row == self.high:
                 row_translate = 'traffic_high'
@@ -255,13 +253,13 @@ class UserProfile:
                 col_translate = 'elevation_low'
 
         return row_translate, col_translate
-    
+
     def getUserHistory(self):
         return self._history
 
     def getUserRecent(self):
         return self._recent
-        
+
     def getUserPreferences(self):
         print(self._user_name)
         if self.is_new_user():
@@ -269,10 +267,10 @@ class UserProfile:
         else:
             final = self.analyzeHistory(self.analyzeRecent())
             print(final)
-        
+
     def getUserPriority(self):
         return self._priority['priority']
-        
+
     def is_new_user(self):
         if self.getUserRecent() == []:
             return True
@@ -384,7 +382,6 @@ def main():
 
     user_active.getUserPreferences()
     user_new.getUserPreferences()
-    
 
 if __name__ == "__main__":
    main()
